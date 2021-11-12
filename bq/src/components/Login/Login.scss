@@ -15,6 +15,7 @@
     padding: 0px;
     justify-items: center;
     justify-content: center;
+    flex-wrap: wrap;
   }
   .input__form {
     display: flex;
@@ -28,10 +29,11 @@
 
   .logo {
     display: flex;
-    width: 900px;
+    width: 100%;
     height: 160px;
     justify-content: flex-end;
-    margin-left: 200px;
+    
+    
   }
   .img__hamburger {
     width: 500px;
@@ -62,8 +64,8 @@
         padding: 0;
         height: 40px;
         border-radius: 10px;
-        border-color: $secondary;
-        border: 1px solid $secondary-dark;
+        border-color: $primary;
+        border: 1px solid $secondary-light;
         cursor: pointer;
         font-size: 18px;
         margin-top: 20px;
@@ -72,6 +74,12 @@
         -webkit-box-shadow: 10px 10px 5px 0px rgba(219, 208, 192, 0.51);
         -moz-box-shadow: 10px 10px 5px 0px rgba(219, 208, 192, 0.51);
         width: 100%;
+        transition: all 300ms linear;
+        &:hover{
+          background-color: #FF4848;
+          color:$secondary-light;
+          font-weight: bolder;
+        }
        
       }
     }
@@ -88,7 +96,7 @@
       width: 80%;
 
       &:focus {
-        border-bottom-color: $text-on-secondary;
+        border-bottom-color: $secondary;
       }
     }
 
