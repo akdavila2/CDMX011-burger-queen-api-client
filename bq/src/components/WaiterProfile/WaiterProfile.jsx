@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
-import { auth, logout } from "../lib/firebase";
+import { auth, logout } from "../../lib/firebase";
 const WaiterProfile = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();

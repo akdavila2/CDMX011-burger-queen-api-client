@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import WaiterProfile from "../components/WaiterProfile";
-import Login from "../components/Login";
+import WaiterProfile from "../components/WaiterProfile/WaiterProfile";
 import NotFound from "../components/NotFound";
+import Login from '../components/Login/Login';
 
 const App = () => {
   return (

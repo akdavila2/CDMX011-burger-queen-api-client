@@ -1,0 +1,108 @@
+@import "../../styles/variables";
+.container__Login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 94vh;
+  overflow-y: hidden !important;
+  overflow-x: hidden;
+
+  .column {
+    display: flex;
+    width: 50%;
+    margin-top: 0px;
+    padding: 0px;
+    justify-items: center;
+    justify-content: center;
+  }
+  .input__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px
+   
+
+  }
+
+  .logo {
+    display: flex;
+    width: 900px;
+    height: 160px;
+    justify-content: flex-end;
+    margin-left: 200px;
+  }
+  .img__hamburger {
+    width: 500px;
+    height: 400px;
+  }
+
+  .login__form {
+    width: 100%;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      
+
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+     
+    }
+
+    button {
+      &.primary-button {
+        background-color: $primary;
+        color: $text-on-secondary;
+        padding: 0;
+        height: 40px;
+        border-radius: 10px;
+        border-color: $secondary;
+        border: 1px solid $secondary-dark;
+        cursor: pointer;
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        box-shadow: 10px 10px 5px 0px rgba(219, 208, 192, 0.51);
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(219, 208, 192, 0.51);
+        -moz-box-shadow: 10px 10px 5px 0px rgba(219, 208, 192, 0.51);
+        width: 100%;
+       
+      }
+    }
+    input {
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid $line-input;
+      box-shadow: none;
+      outline: 0 !important;
+      border-radius: 0;
+      transition: all 300ms linear;
+      padding: 15px;
+      color: $text-on-primary;
+      width: 80%;
+
+      &:focus {
+        border-bottom-color: $text-on-secondary;
+      }
+    }
+
+    .error__section {
+      display: flex;
+      margin-top: 20px;
+      height: 30px;
+      color: $primary;
+      font-weight: bolder;
+      height: 50px;
+    }
+    .icon {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
