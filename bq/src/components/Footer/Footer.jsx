@@ -1,12 +1,11 @@
 import React from "react";
-import '../Footer/Footer.scss'
 
 const Footer = () => {
   return (
     <div className="container__footer">
       <div className="footer">
         <p>
-        2021 All rights reserved - Made by Flor Jardinez  & Ana Karina Dávila.
+          2021 All rights reserved - Made by Flor Jardinez & Ana Karina Dávila.
         </p>
       </div>
     </div>

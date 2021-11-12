@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { auth, login } from "../../lib/firebase";
-import  logo  from "../../assets/banner.png";
-import hamburger from '../../assets/hamburgertwo.png';
+import logo from "../../assets/banner.png";
+import hamburger from "../../assets/hamburgertwo.png";
 import LoginForm from "./LoginForm";
 import Footer from "../Footer/Footer";
 import { useNavigate } from "react-router-dom";
@@ -27,11 +27,11 @@ const Login = () => {
   return (
     <div className="content">
       <div className="container__Login">
-      <header className="logo">
-            <img src= {logo} alt="logoBQ" />
-          </header>
+        <header className="logo">
+          <img src={logo} alt="logoBQ" />
+        </header>
         <section className="column">
-        <img className="img__hamburger" src= {hamburger} alt="logoBQ" />
+          <img className="img__hamburger" src={hamburger} alt="logoBQ" />
         </section>
         <section className="column">
           <div className="login__form">
