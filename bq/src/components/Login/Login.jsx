@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { auth, login } from "../../lib/firebase";
 import logo from "../../assets/banner.png";
 import hamburger from "../../assets/hamburgertwo.png";
 import LoginForm from "./LoginForm";
 import Footer from "../Footer/Footer";
 import { useNavigate } from "react-router-dom";
+import SweetAlert from "sweetalert2";
 
 const Login = () => {
-  const [error, setError] = useState("");
+  // const [error, setError] = useState("");
   const navigate = useNavigate();
   const handleSubmit = async (email, password) => {
     const user = auth.currentUser;
@@ -19,8 +20,10 @@ const Login = () => {
         navigate("/WaiterProfile");
       } catch (error) {
         console.error(error);
-        setError(error.message);
-        setTimeout(() => setError(""), 1500);
+        new SweetAlert('Error', error.message, 'error');
+
+        // setError(error.message);
+        // setTimeout(() => setError(""), 1500);
       }
     }
   };
@@ -36,7 +39,7 @@ const Login = () => {
         <section className="column">
           <div className="login__form">
             <LoginForm handleSubmit={handleSubmit} />
-            <div className="error__section">{error}</div>
+            {/* <div className="error__section">{error}</div> */}
           </div>
         </section>
       </div>
