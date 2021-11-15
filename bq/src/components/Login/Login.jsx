@@ -22,11 +22,15 @@ const Login = () => {
         navigate("/WaiterProfile");
       } catch (error) {
         console.error(error);
-        new SweetAlert({title:'Error',
+        new SweetAlert({
+        title:'Error',
         text:error.message,
         icon:'error',
-        button:'Ok',
-        confirmButtonColor: '#FF4848',
+        showConfirmButton:false,
+        showCancelButton:true,
+        cancelButtonText:'Ok',
+        cancelButtonColor: '#FF4848',
+        // background:'#E5DCC3'
         // timer: 3000
       });
 
