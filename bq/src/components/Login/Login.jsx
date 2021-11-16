@@ -9,6 +9,8 @@ import SweetAlert from "sweetalert2";
 import { onAuthStateChanged } from "firebase/auth";
 const Login = () => {
   // const [error, setError] = useState("");
+
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,14 +37,25 @@ const Login = () => {
         navigate("/WaiterProfile");
       } catch (error) {
         console.error(error);
-        new SweetAlert("Error", error.message, "error");
+        new SweetAlert({
+        title:'Error',
+        text:error.message,
+        icon:'error',
+        showConfirmButton:false,
+        showCancelButton:true,
+        cancelButtonText:'Ok',
+        cancelButtonColor: '#FF4848',
+        // background:'#E5DCC3'
+        // timer: 3000
+      });
+
         // setError(error.message);
         // setTimeout(() => setError(""), 1500);
       }
     }
   };
   return (
-    <div className="content">
+    // <div className="content">
       <div className="container__Login">
         <header className="logo">
           <img src={logo} alt="logoBQ" />
@@ -56,8 +69,9 @@ const Login = () => {
             {/* <div className="error__section">{error}</div> */}
           </div>
         </section>
-      </div>
-      <Footer />
+      {/* </div> */}
+      <div>
+      <Footer /></div>
     </div>
   );
 };
