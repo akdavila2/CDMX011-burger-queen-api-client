@@ -25,7 +25,6 @@
     align-items: center;
     width: 100%;
     gap: 20px;
-
   }
 
   .logo {
@@ -47,14 +46,12 @@
     max-width: 80%;
     display: flex;
 
-
     form {
       width: 100%;
       display: flex;
       flex-direction: column;
       gap: 2.6vh;
       align-items: center;
-
     }
 
     button {
@@ -75,12 +72,11 @@
         -moz-box-shadow: 10px 10px 5px 0px rgba(219, 208, 192, 0.51);
         width: 90%;
         transition: all 300ms linear;
-        &:hover{
+        &:hover {
           background-color: $secondary;
-          color:$secondary-light;
+          color: $secondary-light;
           font-weight: bolder;
         }
-
       }
     }
     input {
@@ -115,11 +111,9 @@
       width: 30px;
       height: 30px;
     }
-
   }
 
   @media all and (orientation: portrait) {
-
     .logo {
       display: flex;
       flex-direction: row;
@@ -148,19 +142,19 @@
     }
 
     .login__form {
-    form {
-    //  background-color:$secondary-dark;
-    background-color:$login-background;
-     border-radius: 10px;
-     padding: 4vh 0px;
-    //  box-shadow: inset 9.5vh 1em $secondary;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    //  margin-bottom: 6vh;
-    }
-    .icon  {
-      display: flex;
-      margin-left: -27vw;
+      form {
+        //  background-color:$secondary-dark;
+        background-color: $login-background;
+        border-radius: 10px;
+        padding: 4vh 0px;
+        //  box-shadow: inset 9.5vh 1em $secondary;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        //  margin-bottom: 6vh;
+      }
+      .icon {
+        display: flex;
+        margin-left: -27vw;
+      }
     }
   }
-}
 }
