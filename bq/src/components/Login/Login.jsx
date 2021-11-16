@@ -37,7 +37,6 @@ const Login = () => {
         navigate("/WaiterProfile");
       } catch (error) {
         console.error(error);
-<<<<<<< HEAD
         new SweetAlert({
         title:'Error',
         text:error.message,
@@ -50,9 +49,6 @@ const Login = () => {
         // timer: 3000
       });
 
-=======
-        new SweetAlert("Error", error.message, "error");
->>>>>>> 083eb090b40905b6586cb678b20bd296e1689331
         // setError(error.message);
         // setTimeout(() => setError(""), 1500);
       }
