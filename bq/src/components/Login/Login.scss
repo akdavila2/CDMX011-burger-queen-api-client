@@ -95,7 +95,7 @@
       padding: 15px;
       color: $text-on-primary;
       width: 80%;
-      text-indent: 6.5vh;
+      text-indent: 4.5vh;
 
       &:focus {
         border-bottom-color: $secondary;
@@ -120,6 +120,9 @@
     @-moz-document url-prefix() {
       .icon {
         margin-left: -31vw;
+      }
+      input{
+        text-indent: 3.5vh;
       }
 
     }

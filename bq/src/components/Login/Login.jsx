@@ -9,8 +9,6 @@ import SweetAlert from "sweetalert2";
 import { onAuthStateChanged } from "firebase/auth";
 
 const Login = () => {
-  // const [error, setError] = useState("");
-
 
   const navigate = useNavigate();
 
@@ -19,10 +17,9 @@ const Login = () => {
       if (user) {
         navigate("/WaiterProfile");
         const uid = user.uid;
-        console.log("active user", uid);
+        console.log("entry", uid)
       } else {
         navigate("/");
-        console.log("user not active");
       }
     });
     // eslint-disable-next-line
