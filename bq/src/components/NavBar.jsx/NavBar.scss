@@ -1,0 +1,27 @@
+@import  "../../styles/variables";
+.navBar{
+    height: 100px;
+    width: 100%;
+}
+.logout{
+    height: 40px;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+   
+}
+.textlogout{
+    display: flex;
+    margin-right: 30px;
+    color: $primary;
+    cursor:pointer;
+    align-items: center;
+    gap:10px
+
+}
+.logoNav{
+    height: 100%;
+    }
+    link{
+        color:white;
+    }
