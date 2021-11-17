@@ -26,15 +26,5 @@ test('test should render Login ', async () => {
     expect(contentSubmit).toBeInTheDocument()
     expect(foother).toBeInTheDocument()
 
-    // fireEvent.change(contentEmail, {
-    //     target: { value: "waiterflor@burgerqueen.com" }
-    // })
-    // fireEvent.change(contentPassword, {
-    //     target: { value: "123456" }
-    // })
-    // fireEvent.click(contentSubmit)
-
-    // expect(mockHandleSubmit).toHaveBeenCalledWith("waiterflor@burgerqueen.com", "123456");
-
 
 });
