@@ -46,7 +46,7 @@ const Login = () => {
         showCancelButton:true,
         cancelButtonText:'Ok',
         cancelButtonColor: '#FF4848',
-         background:'#FAEEE0'
+        background:'#FAEEE0'
         // timer: 3000
       });
 
@@ -59,7 +59,7 @@ const Login = () => {
     // <div className="content">
       <div className="container__Login">
         <header className="logo">
-          <img src={logo} alt="logoBQ" />
+          <img id="img-logo" src={logo} alt="logoBQ" />
         </header>
         <section className="column">
           <img className="img__hamburger" src={hamburger} alt="logoBQ" />
