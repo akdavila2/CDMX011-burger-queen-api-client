@@ -111,6 +111,10 @@
       width: 30px;
       height: 30px;
     }
+    @-moz-document url-prefix() {
+      .icon {
+        margin-left: -31vw;
+      }}
   }
 
   @media all and (orientation: portrait) {
