@@ -167,10 +167,11 @@
       .icon {
         display: flex;
         margin-left: -27vw;
+        margin-right: 30vw;
       }
       @-moz-document url-prefix() {
         .icon {
-          margin-left: -53vw;
+          margin-left: -25vw;
         }
       }
     }
