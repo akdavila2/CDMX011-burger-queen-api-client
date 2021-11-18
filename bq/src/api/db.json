@@ -1,0 +1,100 @@
+{
+   "product":
+    [
+       {
+        "_id":1,
+        "name":"Café americano",
+        "price":5,	
+        "image":null,
+        "type":"Desayuno",
+        "dateEntry":null
+       } ,{
+        "_id":2,
+        "name":"Café con leche",
+        "price":7,	
+        "image":null,
+        "type":"Desayuno",
+        "dateEntry":null
+       },
+       {
+        "_id":3,
+        "name":"Sandwich de jamón y queso",
+        "price":10,	
+        "image":null,
+        "type":"Desayuno",
+        "dateEntry":null 
+       },
+       {
+        "_id":4,
+        "name":"Jugo de fruntas natural",
+        "price":7,	
+        "image":null,
+        "type":"Desayuno",
+        "dateEntry":null
+       },
+       {
+        "_id":5,
+        "name":"Hamburguesa simple",
+        "price":10,	
+        "image":null,
+        "type":"Comida",
+        "dateEntry":null
+       },
+       {
+        "_id":6,
+        "name":"Hamburguesa doble",
+        "price":15,	
+        "image":null,
+        "type":"Comida",
+        "dateEntry":null
+       },
+       {
+        "_id":7,
+        "name":"Papas fritas",
+        "price":5,	
+        "image":null,
+        "type":"Comida",
+        "dateEntry":null
+       },
+       {
+        "_id":8,
+        "name":"Aros de cebolla",
+        "price":5,	
+        "image":null,
+        "type":"Comida",
+        "dateEntry":null
+       }, {
+        "_id":9,
+        "name":"Agua 500ml",
+        "price":5,	
+        "image":null,
+        "type":"Comida",
+        "dateEntry":null
+       },
+       {
+        "_id":10,
+        "name":"Agua 750ml",
+        "price":7,	
+        "image":null,
+        "type":"Comida",
+        "dateEntry":null
+       },{
+        "_id":11,
+        "name":"Bebida/gaseosa 500ml",
+        "price":7,	
+        "image":null,
+        "type":"Comida",
+        "dateEntry":null
+       },{
+        "_id":12,
+        "name":"Bebida/gaseosa 500ml",
+        "price":10,	
+        "image":null,
+        "type":"Comida",
+        "dateEntry":null
+       }
+
+
+     ]
+
+}
