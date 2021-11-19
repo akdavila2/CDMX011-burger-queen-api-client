@@ -105,9 +105,25 @@
       "name": "d",
       "price": "d",
       "id": 1637342717117
+    },
+    {
+      "name": "pan",
+      "price": "23",
+      "id": 1637347807963
     }
   ],
   "order": [
-    {}
+    {
+      "id":23,
+      "userId":301,
+      "client":"Flor",
+      "products":[{
+          "id": 6
+      }],
+      "cantidad":2,
+      "Estatus":"pending",
+      "dateEntry":null,
+      "dateProcessed":null
+    }
   ]
 }

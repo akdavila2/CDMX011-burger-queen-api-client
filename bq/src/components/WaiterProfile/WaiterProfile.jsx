@@ -4,6 +4,7 @@ import NavBar from "../NavBar.jsx/NavBar";
 const WaiterProfile = () => {
   return (
     <>
+
       <NavBar />
       <CrudApi />
       
