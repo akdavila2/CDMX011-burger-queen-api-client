@@ -9,7 +9,7 @@ import SweetAlert from "sweetalert2";
 import { onAuthStateChanged } from "firebase/auth";
 
 const Login = () => {
-
+  console.log(new Date())
   const navigate = useNavigate();
 
   useEffect(() => {
