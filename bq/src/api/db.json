@@ -1,113 +1,113 @@
 {
-    "product": [
-        {
-            "id": 1,
-            "name": "Café americano",
-            "price": "5",
-            "image": null,
-            "type": "breakfast",
-            "dateEntry": null
-        },
-        {
-            "id": 2,
-            "name": "Café con leche",
-            "price": 7,
-            "image": null,
-            "type": "breakfast",
-            "dateEntry": null
-        },
-        {
-            "id": 3,
-            "name": "Sandwich de jamón y queso",
-            "price": 10,
-            "image": null,
-            "type": "breakfast",
-            "dateEntry": null
-        },
-        {
-            "id": 4,
-            "name": "Jugo de fruntas natural",
-            "price": 7,
-            "image": null,
-            "type": "breakfast",
-            "dateEntry": null
-        },
-        {
-            "id": 5,
-            "name": "Hamburguesa simple",
-            "price": 10,
-            "image": null,
-            "type": "lunch",
-            "dateEntry": null
-        },
-        {
-            "id": 6,
-            "name": "Hamburguesa doble",
-            "price": 15,
-            "image": null,
-            "type": "lunch",
-            "dateEntry": null
-        },
-        {
-            "id": 7,
-            "name": "Papas fritas",
-            "price": 5,
-            "image": null,
-            "type": "lunch",
-            "dateEntry": null
-        },
-        {
-            "id": 8,
-            "name": "Aros de cebolla",
-            "price": 5,
-            "image": null,
-            "type": "lunch",
-            "dateEntry": null
-        },
-        {
-            "id": 9,
-            "name": "Agua 500ml",
-            "price": 5,
-            "image": null,
-            "type": "lunch",
-            "dateEntry": null
-        },
-        {
-            "id": 10,
-            "name": "Agua 750ml",
-            "price": 7,
-            "image": null,
-            "type": "lunch",
-            "dateEntry": null
-        },
-        {
-            "id": 11,
-            "name": "Bebida/gaseosa 500ml",
-            "price": 7,
-            "image": null,
-            "type": "lunch",
-            "dateEntry": null
-        },
-        {
-            "id": 12,
-            "name": "Bebida/gaseosa 500ml",
-            "price": 10,
-            "image": null,
-            "type": "lunch",
-            "dateEntry": null
-        },
-        {
-            "name": "sdf",
-            "price": "sd",
-            "id": 1637342486251
-        },
-        {
-            "name": "d",
-            "price": "d",
-            "id": 1637342717117
-        }
-    ],
-    "order": [
-        {}
-    ]
+  "product": [
+    {
+      "id": 1,
+      "name": "Café americano",
+      "price": "5",
+      "image": null,
+      "type": "breakfast",
+      "dateEntry": null
+    },
+    {
+      "id": 2,
+      "name": "Café con leche",
+      "price": 7,
+      "image": null,
+      "type": "breakfast",
+      "dateEntry": null
+    },
+    {
+      "id": 3,
+      "name": "Sandwich de jamón y queso",
+      "price": 10,
+      "image": null,
+      "type": "breakfast",
+      "dateEntry": null
+    },
+    {
+      "id": 4,
+      "name": "Jugo de fruntas natural",
+      "price": 7,
+      "image": null,
+      "type": "breakfast",
+      "dateEntry": null
+    },
+    {
+      "id": 5,
+      "name": "Hamburguesa simple",
+      "price": 10,
+      "image": null,
+      "type": "lunch",
+      "dateEntry": null
+    },
+    {
+      "id": 6,
+      "name": "Hamburguesa doble",
+      "price": 15,
+      "image": null,
+      "type": "lunch",
+      "dateEntry": null
+    },
+    {
+      "id": 7,
+      "name": "Papas fritas",
+      "price": 5,
+      "image": null,
+      "type": "lunch",
+      "dateEntry": null
+    },
+    {
+      "id": 8,
+      "name": "Aros de cebolla",
+      "price": 5,
+      "image": null,
+      "type": "lunch",
+      "dateEntry": null
+    },
+    {
+      "id": 9,
+      "name": "Agua 500ml",
+      "price": 5,
+      "image": null,
+      "type": "lunch",
+      "dateEntry": null
+    },
+    {
+      "id": 10,
+      "name": "Agua 750ml",
+      "price": 7,
+      "image": null,
+      "type": "lunch",
+      "dateEntry": null
+    },
+    {
+      "id": 11,
+      "name": "Bebida/gaseosa 500ml",
+      "price": 7,
+      "image": null,
+      "type": "lunch",
+      "dateEntry": null
+    },
+    {
+      "id": 12,
+      "name": "Bebida/gaseosa 500ml",
+      "price": 10,
+      "image": null,
+      "type": "lunch",
+      "dateEntry": null
+    },
+    {
+      "name": "sdf",
+      "price": "sd",
+      "id": 1637342486251
+    },
+    {
+      "name": "d",
+      "price": "d",
+      "id": 1637342717117
+    }
+  ],
+  "order": [
+    {}
+  ]
 }
