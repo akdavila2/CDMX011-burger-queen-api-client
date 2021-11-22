@@ -9,38 +9,46 @@
   border-radius: 10px;
   margin-left: 20px;
   height: fit-content;
-  margin-top: 20px;
+  margin-top: 10px;
 
   .summary {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
   .name__user {
     display: flex;
     justify-content: center;
   }
   .name {
-    background-color: rgba(216, 206, 206, 0.5);
+    background-color: $primary;
     border-radius: 10px;
     display: block;
     border: none;
     font-size: 18px;
-    color: $primary;
-   outline: none;
-    
+    color: $text-on-secondary;
+    outline: none;
+
+    ::placeholder {
+      color: $text-on-secondary;
+      font-weight: bold;
+    }
   }
-  .summary_total {
+  .summary-total {
     display: flex;
     justify-content: space-between;
     padding: 5px;
     font-family: "Red Rose", cursive;
+    align-items: center;
   }
-  p{
-      font-weight: bold;
-      font-size: 20px;
-      &.total{
-        font-family: "Red Rose", cursive;
-      }
+  p {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .total {
+    font-family: "Red Rose", cursive;
+    font-size: 35px;
+    color: $primary-light;
   }
 
   button {
@@ -69,10 +77,9 @@
       }
     }
   }
-  icon {
+  .icon {
     width: 30px;
     height: 30px;
     cursor: pointer;
-
   }
 }

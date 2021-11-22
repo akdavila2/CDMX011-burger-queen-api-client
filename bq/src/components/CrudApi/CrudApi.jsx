@@ -103,7 +103,7 @@ const CrudApi = () => {
           createData={createData}
           updateData={updateData}
           dataToEdit={dataToEdit}
-          setDataToEdit={setDataToEdit}
+           setDataToEdit={setDataToEdit}
         />
         {loading && <PreLoad />}
         {error && (

@@ -14,10 +14,10 @@ const WaiterProfile = () => {
 
         <div className="container__menu">
           <section className="column__container">
-            <MenuOption />
             <OrderSummary />
           </section>
           <section className="column__container">
+            <MenuOption />
             <FoodMenu />
           </section>
         </div>
