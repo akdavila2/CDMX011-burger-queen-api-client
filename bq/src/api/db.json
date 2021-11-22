@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Café americano",
       "price": "5",
-      "image": null,
+      "image": "../assets/menucafenegro.png",
       "type": "breakfast",
       "dateEntry": null
     },
@@ -95,16 +95,6 @@
       "image": null,
       "type": "lunch",
       "dateEntry": null
-    },
-    {
-      "name": "sdf",
-      "price": "sd",
-      "id": 1637342486251
-    },
-    {
-      "name": "d",
-      "price": "d",
-      "id": 1637342717117
     }
   ],
   "order": [

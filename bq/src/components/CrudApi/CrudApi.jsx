@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { helpHttp } from "../../helpers/helpHttp.js";
 import CrudForm from "./CrudForm";
 import CrudTable from "./CrudTable";
-// import Loader from "./Loader";
 import Message from "./Message";
 import PreLoad from '../PreLoad/PreLoad';
 
@@ -73,7 +72,7 @@ const CrudApi = () => {
 
   const deleteData = (id) => {
     let isDelete = window.confirm(
-      `¿Estás seguro de eliminar el registro con el id '${id}'?`
+      `¿Are you sure to delete the record with the id '${id}'?`
     );
 
     if (isDelete) {
