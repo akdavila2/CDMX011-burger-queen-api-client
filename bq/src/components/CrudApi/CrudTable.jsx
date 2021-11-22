@@ -5,14 +5,10 @@ import CrudTableRow from "./CrudTableRow.jsx";
 const CrudTable = ({ data, setDataToEdit, deleteData }) => {
   return (
     <div>
-      <h3>Tabla de Datos</h3>
+      
       <table>
         <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Precio</th>
-            <th>Acciones</th>
-          </tr>
+         
         </thead>
         <tbody>
           {data.length > 0 ? (
@@ -20,8 +16,8 @@ const CrudTable = ({ data, setDataToEdit, deleteData }) => {
               <CrudTableRow
                 key={el.id}
                 el={el}
-                setDataToEdit={setDataToEdit}
-                deleteData={deleteData}
+                // setDataToEdit={setDataToEdit}
+                // deleteData={deleteData}
               />
             ))
           ) : (
