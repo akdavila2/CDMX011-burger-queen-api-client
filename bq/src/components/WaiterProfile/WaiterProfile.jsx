@@ -1,31 +1,36 @@
 import React from "react";
-// import CrudApi from "../CrudApi/CrudApi";
-import Footer from "../Footer/Footer"
+
+//import CrudApi from "../CrudApi/CrudApi";
 import NavBar from "../NavBar.jsx/NavBar";
-import FoodMenu from "../ApiMock/CrudApiMock"
+import Footer from "../Footer/Footer";
+import { MenuOption } from "./MenuOption";
+import { OrderSummary } from "./OrderSummary";
+import CrudApiMock from "../ApiMock/CrudApiMock";
 const WaiterProfile = () => {
   return (
-    <>
+    <div>
+      <div className="content__waiter__profile">
+        <NavBar />
+        {/* <CrudApi /> */}
 
-      {/* <NavBar />
-      <CrudApi /> */}
-      <div class="container__waiter">
-        <header> <NavBar /></header>
-
-        <div class="waiter-content">
-          <div id="comanda">
-            <p> menu desayuno o comida</p>
-            {/* <p>comanda<CrudApi /></p> */}
-          </div>
-          <div id="menus"> 
-          <FoodMenu/>
-          </div>
+        <div className="container__menu">
+          <section className="column__container">
+            <OrderSummary />
+          </section>
+          <section className="column__container">
+            <MenuOption />
+            <div className="container-food">
+              <CrudApiMock />
+            </div>
+          </section>
         </div>
-        <footer><Footer /></footer>
-
       </div>
+      <footer>
+        <Footer />
+      </footer>
+    </div>
 
-    </>
+
   );
 };
 export default WaiterProfile;

@@ -2,6 +2,7 @@
   "product": [
     {
       "id": 1,
+
       "name":"Coffee",
       "price": "5",
       "image":"https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fmenucafenegro.png?alt=media&token=4b0e2d1e-b961-45da-9f3c-69104d139573",
@@ -84,7 +85,9 @@
       "id": 11,
       "name": "Soda 500ml",
       "price": 7,
-      "image":"https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fgaseosas.png?alt=media&token=4ebea2e8-f568-470c-973d-caa93edc60fd",
+
+      "image": "https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fgaseosas.png?alt=media&token=4ebea2e8-f568-470c-973d-caa93edc60fd",
+
       "type": "Lunch",
       "dateEntry": null
     },
@@ -95,21 +98,6 @@
       "image": "https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fgaseosas.png?alt=media&token=4ebea2e8-f568-470c-973d-caa93edc60fd",
       "type": "Lunch",
       "dateEntry": null
-    },
-    {
-      "name": "sdf",
-      "price": "sd",
-      "id": 1637342486251
-    },
-    {
-      "name": "d",
-      "price": "d",
-      "id": 1637342717117
-    },
-    {
-      "name": "pan",
-      "price": "23",
-      "id": 1637347807963
     }
   ],
   "order": [
