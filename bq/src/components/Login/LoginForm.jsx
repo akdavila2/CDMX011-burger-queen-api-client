@@ -11,10 +11,7 @@ const LoginForm = ({ handleSubmit }) => {
   const { email, password } = state;
 
   return (
-    <form className="form"  onSubmit={(e) => {
-      e.preventDefault();
-      handleSubmit(email, password);
-    }}>
+    <form className="form">
       <div className="input__form">
         <img className="icon" src={iconEmail} alt="iconEmail" />
         <input
@@ -33,6 +30,10 @@ const LoginForm = ({ handleSubmit }) => {
       </div>
       <button
         className="primary-button"
+        onClick={(e) => {
+          e.preventDefault();
+          handleSubmit(email, password);
+        }}
       >
         Login
       </button>

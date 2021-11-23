@@ -1,12 +1,13 @@
 import React from "react";
+
 import { FoodMenu } from "./FoodMenu";
 
-const DataIteration = ({ filterOption }) => {
+const DataIteration = ({ data }) => {
   console.log("1" + data);
   return (
     <>
-      {filterOption.length > 0 ? (
-        filterOption.map((el) => (
+      {data.length > 0 ? (
+        data.map((el) => (
           // console.log('map'+el)
 
           <FoodMenu key={el.id} el={el} />
@@ -16,8 +17,10 @@ const DataIteration = ({ filterOption }) => {
           <td colSpan="3">Sin datos</td>
         </tr>
       )}
+
     </>
   );
 };
 
 export default DataIteration;
+
