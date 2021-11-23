@@ -1,4 +1,5 @@
 import React from "react";
+
 import { FoodMenu } from "./FoodMenu";
 
 const DataIteration = ({ data }) => {
@@ -16,8 +17,10 @@ const DataIteration = ({ data }) => {
           <td colSpan="3">Sin datos</td>
         </tr>
       )}
+
     </>
   );
 };
 
 export default DataIteration;
+

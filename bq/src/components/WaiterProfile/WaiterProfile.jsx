@@ -1,4 +1,5 @@
 import React from "react";
+
 //import CrudApi from "../CrudApi/CrudApi";
 import NavBar from "../NavBar.jsx/NavBar";
 import Footer from "../Footer/Footer";
@@ -28,6 +29,8 @@ const WaiterProfile = () => {
         <Footer />
       </footer>
     </div>
+
+
   );
 };
 export default WaiterProfile;

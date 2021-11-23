@@ -3,6 +3,7 @@ import { helpHttp } from "../../helpers/helpHttp.js";
 
 import DataIteration from "../WaiterProfile/DataIteration";
 import PreLoad from "../PreLoad/PreLoad";
+
 import NotFound from "../NotFound/NotFound";
 
 const CrudApiMock = () => {
@@ -10,6 +11,7 @@ const CrudApiMock = () => {
 
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+
 
   let url = "http://localhost:5000/product";
 
@@ -30,6 +32,7 @@ const CrudApiMock = () => {
       });
   }, [url]);
 
+
   return (
     <>
       {loading && <PreLoad />}
@@ -40,3 +43,4 @@ const CrudApiMock = () => {
 };
 
 export default CrudApiMock;
+
