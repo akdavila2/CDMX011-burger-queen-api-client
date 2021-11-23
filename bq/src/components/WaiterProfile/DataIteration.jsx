@@ -1,12 +1,12 @@
 import React from "react";
 import { FoodMenu } from "./FoodMenu";
 
-const DataIteration = ({ data }) => {
+const DataIteration = ({ filterOption }) => {
   console.log("1" + data);
   return (
     <>
-      {data.length > 0 ? (
-        data.map((el) => (
+      {filterOption.length > 0 ? (
+        filterOption.map((el) => (
           // console.log('map'+el)
 
           <FoodMenu key={el.id} el={el} />
