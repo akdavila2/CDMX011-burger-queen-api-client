@@ -19,7 +19,7 @@ const CrudApi = () => {
     helpHttp()
       .get(url)
       .then((res) => {
-        console.log(res);
+        console.log('data',res);
         if (!res.err) {
           setDb(res);
           setError(null);
@@ -33,7 +33,7 @@ const CrudApi = () => {
 
   const createData = (data) => {
     data.id = Date.now();
-    //console.log(data);
+    console.log('que trae data',data);
 
     let options = {
       body: data,
