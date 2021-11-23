@@ -1,58 +1,15 @@
 import React from 'react';
-import proof from "../../assets/menusandwich.png"
 
-export const FoodMenu = () => {
+export const FoodMenu = ({el}) => {
+     let { name , image} = el; 
     return (
-        <div className= "container-food">
-        <div className= "content-menu">
-            <picture className="content__img">
-                <img className="imag-menu" src={proof} alt="proof" />
-            </picture>
-            <p className= "title__food">Food Name</p>
-        </div>
-        <div className= "content-menu">
-            <picture className="content__img">
-                <img className="imag-menu" src={proof} alt="proof" />
-            </picture>
-            <p className= "title__food">Food Name</p>
-        </div>
-        <div className= "content-menu">
-            <picture className="content__img">
-                <img className="imag-menu" src={proof} alt="proof" />
-            </picture>
-            <p className= "title__food">Food Name</p>
-        </div>
-        <div className= "content-menu">
-            <picture className="content__img">
-                <img className="imag-menu" src={proof} alt="proof" />
-            </picture>
-            <p className= "title__food">Food Name</p>
-        </div>
-        <div className= "content-menu">
-            <picture className="content__img">
-                <img className="imag-menu" src={proof} alt="proof" />
-            </picture>
-            <p className= "title__food">Food Name</p>
-        </div>
-        <div className= "content-menu">
-            <picture className="content__img">
-                <img className="imag-menu" src={proof} alt="proof" />
-            </picture>
-            <p className= "title__food">Food Name</p>
-        </div>
-        <div className= "content-menu">
-            <picture className="content__img">
-                <img className="imag-menu" src={proof} alt="proof" />
-            </picture>
-            <p className= "title__food">Food Name</p>
-        </div>
-        <div className= "content-menu">
-            <picture className="content__img">
-                <img className="imag-menu" src={proof} alt="proof" />
-            </picture>
-            <p className= "title__food">Food Name</p>
-        </div>
         
-        </div>
+        <div className= "content-menu">
+            <picture className="content__img">
+                <img className="imag-menu" src={image} alt="proof" />
+            </picture>
+            <p className= "title__food">{name}</p>
+        </div>   
+     
     )
 }

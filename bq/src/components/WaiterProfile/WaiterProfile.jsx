@@ -4,7 +4,7 @@ import NavBar from "../NavBar.jsx/NavBar";
 import Footer from "../Footer/Footer";
 import { MenuOption } from "./MenuOption";
 import { OrderSummary } from "./OrderSummary";
-import { FoodMenu } from "./FoodMenu";
+import CrudApiMock from "../ApiMock/CrudApiMock";
 const WaiterProfile = () => {
   return (
     <div>
@@ -18,7 +18,9 @@ const WaiterProfile = () => {
           </section>
           <section className="column__container">
             <MenuOption />
-            <FoodMenu />
+            <div className="container-food">
+              <CrudApiMock />
+            </div>
           </section>
         </div>
       </div>
