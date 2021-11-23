@@ -35,7 +35,7 @@
     },
     {
       "id": 5,
-      "name": "Basic burguer",
+      "name": "Basic burger",
       "price": 10,
       "image": "https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fhamburgerone.png?alt=media&token=f6b84ceb-1404-48b7-aa86-ad83baff551e",
       "type": "Lunch",
@@ -43,7 +43,7 @@
     },
     {
       "id": 6,
-      "name": "Big burguer",
+      "name": "Big burger",
       "price": 15,
       "image": "https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fhamburguesadoble.png?alt=media&token=08345d42-1a75-4924-83e1-39dd8f245385",
       "type": "Lunch",
@@ -108,8 +108,8 @@
       "products":[{
           "id": 6
       }],
-      "cantidad":2,
-      "Estatus":"pending",
+      "quantity":2,
+      "status":"pending",
       "dateEntry":null,
       "dateProcessed":null
     }

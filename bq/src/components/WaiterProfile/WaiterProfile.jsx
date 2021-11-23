@@ -43,8 +43,6 @@ const WaiterProfile = () => {
     <div>
       <div className="content__waiter__profile">
         <NavBar />
-        {/* <CrudApi /> */}
-
         <div className="container__menu">
           <section className="column__container">
             <OrderSummary />
@@ -59,7 +57,6 @@ const WaiterProfile = () => {
               </section>
             </div>
             <div className="container-food">
-              {/* <CrudApiMock /> */}
               {loading && <PreLoad />}
               {error && <NotFound />}
               {db && <DataIteration data={db} />}

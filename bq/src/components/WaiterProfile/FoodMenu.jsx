@@ -1,16 +1,19 @@
-import React from 'react';
+import React from "react";
 
-export const FoodMenu = ({el}) => {
-     let { name , image} = el; 
-    return (
-        
-        <div className= "content-menu">
-            <picture className="content__img">
-                <img className="imag-menu" src={image} alt="proof" />
-            </picture>
-            <p className= "title__food">{name}</p>
-        </div>   
-     
-    )
-}
+export const FoodMenu = ({ el }) => {
+  let { name, image } = el;
 
+  return (
+    <div
+      className="content-menu"
+      onClick={() => {
+        console.log("estoy clickeando");
+      }}
+    >
+      <picture className="content__img">
+        <img className="imag-menu" src={image} alt="proof" />
+      </picture>
+      <p className="title__food">{name}</p>
+    </div>
+  );
+};
