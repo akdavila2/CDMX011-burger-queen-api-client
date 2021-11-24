@@ -1,7 +1,7 @@
 {
   "product": [
     {
-      "id": 1,
+      "id": 22,
 
       "name":"Coffee",
       "price": "5",
@@ -93,7 +93,7 @@
     },
     {
       "id": 12,
-      "name": "Soda 500ml",
+      "name": "Soda 750ml",
       "price": 10,
       "image": "https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fgaseosas.png?alt=media&token=4ebea2e8-f568-470c-973d-caa93edc60fd",
       "type": "Lunch",
