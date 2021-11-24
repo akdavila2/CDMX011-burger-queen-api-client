@@ -1,5 +1,6 @@
 import React from "react";
-const PreLoad = () => {
+
+ const PreLoad = () => {
   return (
     <div className="content__preload">
       <div className="spinner"></div>
@@ -7,3 +8,4 @@ const PreLoad = () => {
   );
 };
 export default PreLoad;
+

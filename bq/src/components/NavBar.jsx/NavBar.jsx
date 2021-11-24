@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import iconLogout from "../../assets/salir.png";
 import { useNavigate } from "react-router-dom";
-import logo from "../../assets/banner.png";
 import { auth, logout } from "../../lib/firebase";
+import iconLogout from "../../assets/salir.png";
+import logo from "../../assets/banner.png";
+
 
 const NavBar = () => {
   const [error, setError] = useState("");

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { helpHttp } from "../../helpers/helpHttp.js";
-
-import DataIteration from "../WaiterProfile/DataIteration";
+import {helpHttp}  from "../../helpers/helpHttp.js";
+import SweetAlert from "sweetalert2";
 import PreLoad from "../PreLoad/PreLoad";
 import NotFound from "../NotFound/NotFound";
 import NavBar from "../NavBar.jsx/NavBar";
-import Footer from "../Footer/Footer";
-import { OrderSummary } from "./OrderSummary";
-import SweetAlert from "sweetalert2";
+import MenuOption  from "./MenuOption.jsx";
+import OrderSummary  from "./OrderSummary";
+import Footer from "../Footer/Footer"
+import {DataIteration} from "../WaiterProfile/DataIteration";
+
 
 const WaiterProfile = () => {
   const [db, setDb] = useState(null);
@@ -48,7 +49,6 @@ const WaiterProfile = () => {
     helpHttp()
       .get(url)
       .then((res) => {
-        console.log("soy res", res);
         if (!res.err) {
           setDb(res);
           setError(null);
@@ -61,12 +61,9 @@ const WaiterProfile = () => {
   }, [url]);
 
   const createOrder= (dataOrder, total , name) => {
-  //  const {name, id, price, qty}=dataOrder;
  
-   console.log(total)
     const id = Date.now();
-    //console.log(data);
-
+   
     let options = {
       body: { id:id , ...dataOrder, total, status:'Pending', userName:name, dateOrder:new Date()},
       headers: { "content-type": "application/json" },
@@ -77,11 +74,11 @@ const WaiterProfile = () => {
       if (!res.err) {
         new SweetAlert({
           title: "Order shipped",
-          text:"your order has been sent to the chef",
+          text:"Your order has been sent to the chef",
           showConfirmButton: true,
           confirmButtonColor: "#FF4848",
           background: "#FAEEE0",
-          // timer: 3000
+        
         });
       } else {
         setError(res);
@@ -98,28 +95,7 @@ const WaiterProfile = () => {
             <OrderSummary orderItems={orderItems} onRemove={onRemove} createOrder={createOrder} />
           </section>
           <section className="column__container">
-            {/* <MenuOption /> */}
-            <div className="content-menu-option">
-              <h3>Menu</h3>
-              <section className="section__option">
-                <button
-                  className="secondary-button"
-                  onClick={() => {
-                    setTypeFood("Breakfast");
-                  }}
-                >
-                  Breakfast
-                </button>
-                <button
-                  className="secondary-button"
-                  onClick={() => {
-                    setTypeFood("Lunch");
-                  }}
-                >
-                  Lunch
-                </button>
-              </section>
-            </div>
+            <MenuOption setTypeFood={setTypeFood} />
             <div className="container-food">
               {loading && <PreLoad />}
               {error && <NotFound />}

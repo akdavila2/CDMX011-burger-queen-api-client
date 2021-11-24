@@ -6,8 +6,7 @@ export const FoodMenu = ( props ) => {
   return (
     <div
       className="content-menu"
-      onClick={() => {
-        console.log("clicking");  
+      onClick={() => { 
         onAdd(product);
       }}
     >

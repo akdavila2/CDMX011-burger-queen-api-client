@@ -1,8 +1,7 @@
 import React from "react";
-
 import { FoodMenu } from "./FoodMenu";
 
-const DataIteration = (props) => {
+export const DataIteration = (props) => {
   const {products, onAdd}= props
   return (
     <>
@@ -16,4 +15,4 @@ const DataIteration = (props) => {
     </>
   );
 };
-export default DataIteration;
+
