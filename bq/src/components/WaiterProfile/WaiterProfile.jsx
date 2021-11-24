@@ -7,6 +7,7 @@ import NotFound from "../NotFound/NotFound";
 import NavBar from "../NavBar.jsx/NavBar";
 import Footer from "../Footer/Footer";
 import { OrderSummary } from "./OrderSummary";
+import SweetAlert from "sweetalert2";
 
 const WaiterProfile = () => {
   const [db, setDb] = useState(null);
@@ -38,8 +39,9 @@ const WaiterProfile = () => {
       );
     }
   };
-
+  
   let url = `http://localhost:5000/product?type=${typeFood}`;
+  let api = helpHttp();
 
   useEffect(() => {
     setLoading(true);
@@ -58,13 +60,42 @@ const WaiterProfile = () => {
       });
   }, [url]);
 
+  const createOrder= (dataOrder, total , name) => {
+  //  const {name, id, price, qty}=dataOrder;
+ 
+   console.log(total)
+    const id = Date.now();
+    //console.log(data);
+
+    let options = {
+      body: { id:id , ...dataOrder, total, status:'Pending', userName:name, dateOrder:new Date()},
+      headers: { "content-type": "application/json" },
+    };
+
+    api.post('http://localhost:5000/order', options).then((res) => {
+      console.log(res);
+      if (!res.err) {
+        new SweetAlert({
+          title: "Order shipped",
+          text:"your order has been sent to the chef",
+          showConfirmButton: true,
+          confirmButtonColor: "#FF4848",
+          background: "#FAEEE0",
+          // timer: 3000
+        });
+      } else {
+        setError(res);
+      }
+    });
+  };
+
   return (
     <div>
       <div className="content__waiter__profile">
         <NavBar />
         <div className="container__menu">
           <section className="column__container">
-            <OrderSummary orderItems={orderItems} onRemove={onRemove} />
+            <OrderSummary orderItems={orderItems} onRemove={onRemove} createOrder={createOrder} />
           </section>
           <section className="column__container">
             {/* <MenuOption /> */}

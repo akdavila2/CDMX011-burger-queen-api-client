@@ -34,29 +34,11 @@ const CrudApiMock = () => {
 
 
   return (
-<<<<<<< HEAD
-    <div>
-      
-          {loading && <PreLoad />}
-        {/* {error && (
-          // <Message
-          //   msg={`Error ${error.status}: ${error.statusText}`}
-          //   bgColor="#dc3545"
-          // />
-        )} */}
-        {db && (
-          <DataIteration
-            data={db}
-          />
-        )}
-    </div>
-=======
     <>
       {loading && <PreLoad />}
       {error && <NotFound />}
       {db && <DataIteration data={db} />}
     </>
->>>>>>> e644da0bd29955f3b0fea09862894ac1e15e11fe
   );
 };
 

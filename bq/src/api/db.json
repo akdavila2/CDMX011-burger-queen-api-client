@@ -2,10 +2,9 @@
   "product": [
     {
       "id": 22,
-
-      "name":"Coffee",
+      "name": "Coffee",
       "price": "5",
-      "image":"https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fmenucafenegro.png?alt=media&token=4b0e2d1e-b961-45da-9f3c-69104d139573",
+      "image": "https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fmenucafenegro.png?alt=media&token=4b0e2d1e-b961-45da-9f3c-69104d139573",
       "type": "Breakfast",
       "dateEntry": null
     },
@@ -19,7 +18,7 @@
     },
     {
       "id": 3,
-      "name": "Ham and cheese sandwich",
+      "name": "Sandwich",
       "price": 10,
       "image": "https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fmenusandwich.png?alt=media&token=4f75e45c-8bce-4786-a343-4a7c032ccde0",
       "type": "Breakfast",
@@ -85,9 +84,7 @@
       "id": 11,
       "name": "Soda 500ml",
       "price": 7,
-
       "image": "https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fgaseosas.png?alt=media&token=4ebea2e8-f568-470c-973d-caa93edc60fd",
-
       "type": "Lunch",
       "dateEntry": null
     },
@@ -102,16 +99,155 @@
   ],
   "order": [
     {
-      "id":23,
-      "userId":301,
-      "client":"Flor",
-      "products":[{
-          "id": 6
-      }],
-      "quantity":2,
-      "status":"pending",
-      "dateEntry":null,
-      "dateProcessed":null
+      "id": 1637735670362,
+      "orderItems": [
+        {
+          "id": 22,
+          "name": "Coffee",
+          "price": "5",
+          "image": "https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fmenucafenegro.png?alt=media&token=4b0e2d1e-b961-45da-9f3c-69104d139573",
+          "type": "Breakfast",
+          "dateEntry": null,
+          "qty": 1
+        }
+      ],
+      "total": 5,
+      "status": "Pending",
+      "userName": "pepe",
+      "dateOrder": "2021-11-24T06:34:30.363Z"
+    },
+    {
+      "id": 1637768087481,
+      "orderItems": [
+        {
+          "id": 22,
+          "name": "Coffee",
+          "price": "5",
+          "image": "https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fmenucafenegro.png?alt=media&token=4b0e2d1e-b961-45da-9f3c-69104d139573",
+          "type": "Breakfast",
+          "dateEntry": null,
+          "qty": 6
+        },
+        {
+          "id": 3,
+          "name": "Ham and cheese sandwich",
+          "price": 10,
+          "image": "https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fmenusandwich.png?alt=media&token=4f75e45c-8bce-4786-a343-4a7c032ccde0",
+          "type": "Breakfast",
+          "dateEntry": null,
+          "qty": 1
+        },
+        {
+          "id": 2,
+          "name": "Cappuccino",
+          "price": 7,
+          "image": "https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fmenucafeconleche.png?alt=media&token=7bc028c2-8dd2-4e04-98e0-69e458d1aee5",
+          "type": "Breakfast",
+          "dateEntry": null,
+          "qty": 1
+        },
+        {
+          "id": 4,
+          "name": "Natural fruit juice",
+          "price": 7,
+          "image": "https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fmenujugo.png?alt=media&token=1f2d29ee-3d77-4972-b9af-4728ad1804d8",
+          "type": "Breakfast",
+          "dateEntry": null,
+          "qty": 1
+        }
+      ],
+      "total": 54,
+      "status": "Pending",
+      "dateOrder": "2021-11-24T15:34:47.481Z"
+    },
+    {
+      "id": 1637768133217,
+      "orderItems": [
+        {
+          "id": 22,
+          "name": "Coffee",
+          "price": "5",
+          "image": "https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fmenucafenegro.png?alt=media&token=4b0e2d1e-b961-45da-9f3c-69104d139573",
+          "type": "Breakfast",
+          "dateEntry": null,
+          "qty": 6
+        },
+        {
+          "id": 3,
+          "name": "Ham and cheese sandwich",
+          "price": 10,
+          "image": "https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fmenusandwich.png?alt=media&token=4f75e45c-8bce-4786-a343-4a7c032ccde0",
+          "type": "Breakfast",
+          "dateEntry": null,
+          "qty": 1
+        },
+        {
+          "id": 2,
+          "name": "Cappuccino",
+          "price": 7,
+          "image": "https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fmenucafeconleche.png?alt=media&token=7bc028c2-8dd2-4e04-98e0-69e458d1aee5",
+          "type": "Breakfast",
+          "dateEntry": null,
+          "qty": 1
+        },
+        {
+          "id": 4,
+          "name": "Natural fruit juice",
+          "price": 7,
+          "image": "https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fmenujugo.png?alt=media&token=1f2d29ee-3d77-4972-b9af-4728ad1804d8",
+          "type": "Breakfast",
+          "dateEntry": null,
+          "qty": 1
+        }
+      ],
+      "total": 54,
+      "status": "Pending",
+      "userName": "flor",
+      "dateOrder": "2021-11-24T15:35:33.217Z"
+    },
+    {
+      "id": 1637768396573,
+      "orderItems": [
+        {
+          "id": 3,
+          "name": "Sandwich",
+          "price": 10,
+          "image": "https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fmenusandwich.png?alt=media&token=4f75e45c-8bce-4786-a343-4a7c032ccde0",
+          "type": "Breakfast",
+          "dateEntry": null,
+          "qty": 6
+        }
+      ],
+      "total": 60,
+      "status": "Pending",
+      "userName": "hooo",
+      "dateOrder": "2021-11-24T15:39:56.573Z"
+    },
+    {
+      "id": 1637768530447,
+      "orderItems": [
+        {
+          "id": 22,
+          "name": "Coffee",
+          "price": "5",
+          "image": "https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fmenucafenegro.png?alt=media&token=4b0e2d1e-b961-45da-9f3c-69104d139573",
+          "type": "Breakfast",
+          "dateEntry": null,
+          "qty": 1
+        },
+        {
+          "id": 2,
+          "name": "Cappuccino",
+          "price": 7,
+          "image": "https://firebasestorage.googleapis.com/v0/b/ac-burger-queen.appspot.com/o/img-burger%2Fmenucafeconleche.png?alt=media&token=7bc028c2-8dd2-4e04-98e0-69e458d1aee5",
+          "type": "Breakfast",
+          "dateEntry": null,
+          "qty": 2
+        }
+      ],
+      "total": 19,
+      "status": "Pending",
+      "dateOrder": "2021-11-24T15:42:10.447Z"
     }
   ]
 }
