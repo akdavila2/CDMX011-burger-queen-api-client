@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Rose:wght@500&display=swap");
-@import "../../styles/variables";
+@import "../../../styles/variables";
 .content__order__summary {
   display: flex;
   flex-direction: column;
@@ -46,7 +46,6 @@
     display: flex;
     justify-content: space-between;
     padding: 5px;
-    font-family: "Red Rose", cursive;
     align-items: center;
   }
   p {
@@ -54,7 +53,6 @@
     font-size: 20px;
   }
   .total {
-    font-family: "Red Rose", cursive;
     font-size: 35px;
     color: $primary-light;
   }
@@ -77,6 +75,7 @@
       -moz-box-shadow: 5px 5px 5px 0px rgba(219, 208, 192, 0.51);
       width: 45%;
       transition: all 300ms linear;
+      font-weight: bold;
       &:active,
       &:hover {
         background-color: $secondary;

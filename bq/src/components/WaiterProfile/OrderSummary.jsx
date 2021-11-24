@@ -1,22 +1,11 @@
 import React, {useState} from "react";
 import iconDelete from "../../assets/eliminar.png";
-// const initailForm = {
-//   name: "",
-  
-// };
 
-export const OrderSummary = (props) => {
+const OrderSummary = (props) => {
   let { orderItems, onRemove, createOrder } = props;
   const totalPrice = orderItems.reduce((a, c) => a + c.qty * c.price, 0);
   const [nameState, setName] = useState({}); 
   const handleName = (e) => setName({ ...nameState, name: e.target.value });
-
-  // const handleReset = (e) => {
-  //   orderItems={};
-  //   setName(initailForm);
-    
-  // };
-
 
   const { name } = nameState;
 
@@ -56,3 +45,4 @@ export const OrderSummary = (props) => {
     </div>
   );
 };
+export default OrderSummary;
