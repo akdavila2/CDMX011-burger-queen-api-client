@@ -1,0 +1,56 @@
+@import "../../styles/variables";
+
+.container-food {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 102%;
+  margin-right: 9%;
+  
+}
+.content-menu {
+  border-radius: 10px;
+  margin: 10px;
+  height: fit-content;
+  margin-top: 10px;
+  width: 46%;
+  padding: 0px;
+  cursor: pointer;
+  .content__img {
+    background-color: rgba(216, 206, 206, 0.2);
+    height: 70px;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px; 
+    border-bottom-left-radius:0px;
+    border-bottom-right-radius:0px; 
+    display: flex;
+    justify-content: center;
+  }
+
+
+  .title__food {
+    background-color: $line-input;
+    color: $text-on-secondary;
+    font-size: 18px;
+    height: 40px;
+    margin: unset;
+
+    border-top-left-radius:0px;
+    border-top-right-radius:0px; 
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px; 
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: "Red Rose", cursive;
+
+  }
+  .imag-menu {
+    width: 100px;
+    height: 80px;
+    display: flex;
+  }
+}
+

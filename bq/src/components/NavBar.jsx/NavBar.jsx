@@ -21,8 +21,7 @@ const NavBar = () => {
     <div>
       <div className="navBar">
         <img src={logo} alt="logonav" className="logoNav" />
-      </div>
-      <div className="logout">
+        <div className="logout">
         <div className="textlogout">
           <img
             src={iconLogout}
@@ -34,6 +33,8 @@ const NavBar = () => {
           {error && <div className="error">{error}</div>}
         </div>
       </div>
+      </div>
+
     </div>
   );
 };
