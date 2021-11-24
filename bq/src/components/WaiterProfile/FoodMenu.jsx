@@ -1,21 +1,20 @@
 import React from "react";
-// import proof from "../../assets/menusandwich.png"
 
-const FoodMenu = ({el}) => {
-  console.log('quien soy'+el)
-  let { name , image} = el;
+export const FoodMenu = ( props ) => {
+  let { product, onAdd } = props;
+
   return (
-    <>
-
-        <div className= "content__menu">
-            <picture className="content__img">
-                <img className="imag__menu" src={image} alt="proof" />
-            </picture>
-            
-            <p className= "title__food">{name}</p>
-        </div>
-
-      </>
+    <div
+      className="content-menu"
+      onClick={() => {
+        console.log("clicking");  
+        onAdd(product);
+      }}
+    >
+      <picture className="content__img">
+        <img className="imag-menu" src={product.image} alt={product.image} />
+      </picture>
+      <p className="title__food">{product.name}</p>
+    </div>
   );
 };
-export default FoodMenu;

@@ -1,33 +1,19 @@
 import React from "react";
-import FoodMenuRow from "./FoodMenu";
-import setDataToEdit from "../ApiMock/CrudApiMock";
-import deleteData from "../ApiMock/CrudApiMock";
-const DataIteration
-= ({ data }) => {
-  console.log("1"+data)
+
+import { FoodMenu } from "./FoodMenu";
+
+const DataIteration = (props) => {
+  const {products, onAdd}= props
   return (
-    
     <>
-      
-          {data.length > 0 ? (
-            data.map((el) => (
-              // console.log('map'+el)
-              <FoodMenuRow
-                key={el.id}
-                el={el}
-                setDataToEdit={setDataToEdit}
-                deleteData={deleteData}
-              />
-            ))
-          ) : (
-            <tr>
-              <td colSpan="3">Sin datos</td>
-            </tr>
-          )}
-          
+      {products.length> 0 ? (
+        products.map((product) => <FoodMenu key={product.id} product={product} onAdd={onAdd} />)
+      ) : (
+        <tr>
+          <td colSpan="3">No data</td>
+        </tr>
+      )}
     </>
   );
 };
-
 export default DataIteration;
-;
