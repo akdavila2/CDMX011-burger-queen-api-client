@@ -40,8 +40,8 @@ const WaiterProfile = () => {
       );
     }
   };
-  
-  let url = `http://localhost:5000/product?type=${typeFood}`;
+  let url = `https://my-json-server.typicode.com/akdavila2/api_burger/product?type=${typeFood}`;
+  //let url = `http://localhost:5000/product?type=${typeFood}`;
   let api = helpHttp();
 
   useEffect(() => {

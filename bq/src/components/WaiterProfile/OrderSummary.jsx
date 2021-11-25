@@ -1,16 +1,22 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import iconDelete from "../../assets/eliminar.png";
 
 const OrderSummary = (props) => {
   let { orderItems, onRemove, createOrder } = props;
   const totalPrice = orderItems.reduce((a, c) => a + c.qty * c.price, 0);
-  const [nameState, setName] = useState({}); 
+  const [nameState, setName] = useState({});
   const handleName = (e) => setName({ ...nameState, name: e.target.value });
 
   const { name } = nameState;
 
   return (
-    <div className="content__order__summary">
+    <form
+      className="content__order__summary"
+      onSubmit={(e) => {
+        e.preventDefault();
+        createOrder(props, totalPrice, name);
+      }}
+    >
       <section className="name__user">
         <input
           className="name"
@@ -37,12 +43,12 @@ const OrderSummary = (props) => {
         ))}
         {orderItems.length !== 0 && (
           <div className="summary-total">
-            <button className="secondary-button" onClick={()=>createOrder(props, totalPrice, name) } >Send Order</button>
+            <button className="secondary-button">Send Order</button>
             <h2 className="total">Total: {totalPrice.toFixed(2)}</h2>
           </div>
         )}
       </div>
-    </div>
+    </form>
   );
 };
 export default OrderSummary;

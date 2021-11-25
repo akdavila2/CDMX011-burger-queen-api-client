@@ -3,12 +3,12 @@ import React from "react";
 const MenuOption = (prop) => {
   let {setTypeFood}=prop;
   return (
-    <div className="content-menu-option">
+    <form className="content-menu-option">
     <h3>Menu</h3>
     <section className="section__option">
       <button
         className="secondary-button"
-        onClick={() => {
+        onClick={(e) => {e.preventDefault();
           setTypeFood("Breakfast");
         }}
       >
@@ -16,14 +16,14 @@ const MenuOption = (prop) => {
       </button>
       <button
         className="secondary-button"
-        onClick={() => {
+        onClick={(e) => {e.preventDefault();
           setTypeFood("Lunch");
         }}
       >
         Lunch
       </button>
     </section>
-  </div>
+  </form>
   );
 };
 export default MenuOption;

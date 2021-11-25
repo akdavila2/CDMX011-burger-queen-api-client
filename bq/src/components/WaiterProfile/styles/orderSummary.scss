@@ -15,9 +15,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-right:10px ;
-    .quantity-price{
-    margin-left: auto;
+    margin-right: 10px;
+    .quantity-price {
+      margin-left: auto;
     }
   }
   .name__user {
@@ -55,6 +55,7 @@
   .total {
     font-size: 35px;
     color: $primary-light;
+
   }
 
   button {
@@ -89,5 +90,10 @@
     height: 30px;
     cursor: pointer;
     margin-left: 30px;
+  }
+  @media all and (orientation: portrait) {
+    .total {
+      font-size: 25px;
+    }
   }
 }
