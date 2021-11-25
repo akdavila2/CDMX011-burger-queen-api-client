@@ -5,8 +5,8 @@ export const FoodOrder = (props) => {
 
   return (
     <div>
-      <picture>
-        <img src={order.image} alt={order.image} />
+      <picture>Foto
+        <img src={order.orderItems.image} alt={order.image} />
       </picture>
       <p>ID: {order.id}</p>
       <p>Customer: {order.userName}</p>

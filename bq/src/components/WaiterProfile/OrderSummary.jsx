@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import iconDelete from "../../assets/eliminar.png";
 
 const OrderSummary = (props) => {
-  let { orderItems, onRemove, createOrder } = props;
+  let { orderItems, onRemove, createOrder, cleanOrder } = props;
   const totalPrice = orderItems.reduce((a, c) => a + c.qty * c.price, 0);
   const [nameState, setName] = useState({});
   const handleName = (e) => setName({ ...nameState, name: e.target.value });
@@ -14,6 +14,8 @@ const OrderSummary = (props) => {
       className="content__order__summary"
       onSubmit={(e) => {
         e.preventDefault();
+        e.target.reset();
+        cleanOrder();
         createOrder(props, totalPrice, name);
       }}
     >
