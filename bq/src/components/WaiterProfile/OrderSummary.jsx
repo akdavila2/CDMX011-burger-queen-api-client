@@ -28,7 +28,7 @@ const OrderSummary = (props) => {
         ></input>
       </section>
       <div>
-        {orderItems.length === 0 && <div>Order is empty</div>}
+        {orderItems.length === 0 && <div>Select dishes from menu.</div>}
         {orderItems.map((item) => (
           <section key={item.id} className="summary">
             <p>{item.name}</p>
