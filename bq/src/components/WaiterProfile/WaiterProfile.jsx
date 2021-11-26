@@ -10,7 +10,8 @@ import Footer from "../Footer/Footer"
 import {DataIteration} from "../WaiterProfile/DataIteration";
 
 
-const WaiterProfile = () => {
+const WaiterProfile = (uid) => {
+  console.log(uid)
   const [db, setDb] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -100,9 +101,10 @@ const WaiterProfile = () => {
           </section>
           <section className="column__container">
             <MenuOption setTypeFood={setTypeFood} />
-            <div className="container-food">
-              {loading && <PreLoad />}
+            {loading && <PreLoad />}
               {error && <NotFound />}
+            <div className="container-food">
+          
               {db && <DataIteration products={db} onAdd={onAdd} />}
             </div>
           </section>

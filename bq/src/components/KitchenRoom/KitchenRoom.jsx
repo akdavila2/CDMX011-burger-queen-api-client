@@ -11,8 +11,8 @@ export const KitchenRoom = () => {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
 
-    let url = `https://api-burger-heroku.herokuapp.com/order`;
-    let api = helpHttp();
+    let url = `https://api-burger-heroku.herokuapp.com/order?status=Pending`;
+    // let api = helpHttp();
     useEffect(() => {
         setLoading(true);
         helpHttp()
