@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from "react";
-import {helpHttp}  from "../../helpers/helpHttp.js";
+import { helpHttp } from "../../helpers/helpHttp.js";
 import SweetAlert from "sweetalert2";
 import PreLoad from "../PreLoad/PreLoad";
 import NotFound from "../NotFound/NotFound";
 import NavBar from "../NavBar.jsx/NavBar";
-import MenuOption  from "./MenuOption.jsx";
-import OrderSummary  from "./OrderSummary";
+import MenuOption from "./MenuOption.jsx";
+import OrderSummary from "./OrderSummary";
 import Footer from "../Footer/Footer"
-import {DataIteration} from "../WaiterProfile/DataIteration";
+import { DataIteration } from "../WaiterProfile/DataIteration";
 
 
-const WaiterProfile = () => {
+const WaiterProfile = (uid) => {
+  console.log(uid)
   const [db, setDb] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [typeFood, setTypeFood] = useState("Breakfast");
   const [orderItems, setOrderItems] = useState([]);
+
+  const cleanOrder = () => { setOrderItems([]); }
+
   const onAdd = (product) => {
     const exist = orderItems.find((x) => x.id === product.id);
     if (exist) {
@@ -40,8 +44,8 @@ const WaiterProfile = () => {
       );
     }
   };
-  
-  let url = `http://localhost:5000/product?type=${typeFood}`;
+  let url = `https://my-json-server.typicode.com/akdavila2/api_burger/product?type=${typeFood}`;
+  //let url = `http://localhost:5000/product?type=${typeFood}`;
   let api = helpHttp();
 
   useEffect(() => {
@@ -60,25 +64,25 @@ const WaiterProfile = () => {
       });
   }, [url]);
 
-  const createOrder= (dataOrder, total , name) => {
- 
+  const createOrder = (dataOrder, total, name) => {
+
     const id = Date.now();
-   
+
     let options = {
-      body: { id:id , ...dataOrder, total, status:'Pending', userName:name, dateOrder:new Date()},
+      body: { id: id, ...dataOrder, total, status: 'Pending', userName: name, dateOrder: new Date() },
       headers: { "content-type": "application/json" },
     };
 
-    api.post('http://localhost:5000/order', options).then((res) => {
+    api.post('https://my-json-server.typicode.com/akdavila2/api_burger/order', options).then((res) => {
       console.log(res);
       if (!res.err) {
         new SweetAlert({
           title: "Order shipped",
-          text:"Your order has been sent to the chef",
+          text: "Your order has been sent to the chef",
           showConfirmButton: true,
           confirmButtonColor: "#FF4848",
           background: "#FAEEE0",
-        
+
         });
       } else {
         setError(res);
@@ -92,13 +96,14 @@ const WaiterProfile = () => {
         <NavBar />
         <div className="container__menu">
           <section className="column__container">
-            <OrderSummary orderItems={orderItems} onRemove={onRemove} createOrder={createOrder} />
+            <OrderSummary cleanOrder={cleanOrder} orderItems={orderItems} onRemove={onRemove} createOrder={createOrder} />
           </section>
           <section className="column__container">
             <MenuOption setTypeFood={setTypeFood} />
+            {loading && <PreLoad />}
+            {error && <NotFound />}
             <div className="container-food">
-              {loading && <PreLoad />}
-              {error && <NotFound />}
+
               {db && <DataIteration products={db} onAdd={onAdd} />}
             </div>
           </section>

@@ -1,16 +1,24 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import iconDelete from "../../assets/eliminar.png";
 
 const OrderSummary = (props) => {
-  let { orderItems, onRemove, createOrder } = props;
+  let { orderItems, onRemove, createOrder, cleanOrder } = props;
   const totalPrice = orderItems.reduce((a, c) => a + c.qty * c.price, 0);
-  const [nameState, setName] = useState({}); 
+  const [nameState, setName] = useState({});
   const handleName = (e) => setName({ ...nameState, name: e.target.value });
 
   const { name } = nameState;
 
   return (
-    <div className="content__order__summary">
+    <form
+      className="content__order__summary"
+      onSubmit={(e) => {
+        e.preventDefault();
+        e.target.reset();
+        cleanOrder();
+        createOrder(props, totalPrice, name);
+      }}
+    >
       <section className="name__user">
         <input
           className="name"
@@ -20,7 +28,7 @@ const OrderSummary = (props) => {
         ></input>
       </section>
       <div>
-        {orderItems.length === 0 && <div>Order is empty</div>}
+        {orderItems.length === 0 && <div className="empty-order">Select dishes from menu.</div>}
         {orderItems.map((item) => (
           <section key={item.id} className="summary">
             <p>{item.name}</p>
@@ -37,12 +45,12 @@ const OrderSummary = (props) => {
         ))}
         {orderItems.length !== 0 && (
           <div className="summary-total">
-            <button className="secondary-button" onClick={()=>createOrder(props, totalPrice, name) } >Send Order</button>
+            <button className="secondary-button">Send Order</button>
             <h2 className="total">Total: {totalPrice.toFixed(2)}</h2>
           </div>
         )}
       </div>
-    </div>
+    </form>
   );
 };
 export default OrderSummary;

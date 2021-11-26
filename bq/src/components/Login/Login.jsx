@@ -20,7 +20,7 @@ const Login = () => {
       if (user) {
         navigate("/WaiterProfile");
         const uid = user.uid;
-        console.log("entry", uid);
+        console.log("entry", uid); 
       } else {
         navigate("/");
       }
