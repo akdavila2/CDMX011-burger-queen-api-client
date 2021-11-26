@@ -1,13 +1,12 @@
-
 .content-menu-option {
   display: flex;
   flex-direction: column;
-  width: 95%;
+  width: 44.5vw;;
   height: 70px;
   background-color: rgba(216, 206, 206, 0.5);
   padding: 5px;
   border-radius: 10px;
-  margin-right: 11%;
+  margin-right: 12%;
   margin-top: 10px;
 
   h3 {
@@ -18,7 +17,7 @@
   }
   .section__option {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 0%;
     padding: 0%;
   }
@@ -38,7 +37,7 @@
       box-shadow: 10px 10px 5px 0px rgba(219, 208, 192, 0.51);
       -webkit-box-shadow: 5px 5px 5px 0px rgba(219, 208, 192, 0.51);
       -moz-box-shadow: 5px 5px 5px 0px rgba(219, 208, 192, 0.51);
-      width: 49%;
+      width: 40%;
       font-weight: bold;
       //transition: all 300ms linear;
       &:active, &:focus,
@@ -49,4 +48,13 @@
       }
     }
   }
+}
+@media all and (orientation: portrait) {
+  .content-menu {
+    width: 45%;
+  }
+  .content-menu-option {
+    width: 45vw;
+    margin-right: 12%;
+}
 }
