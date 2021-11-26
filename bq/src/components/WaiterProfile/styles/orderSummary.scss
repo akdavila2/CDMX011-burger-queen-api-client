@@ -7,7 +7,7 @@
   background-color: rgba(216, 206, 206, 0.2);
   padding: 15px;
   border-radius: 10px;
-  margin-left: 20px;
+  // margin-left: 20px;
   height: fit-content;
   margin-top: 10px;
 
@@ -35,7 +35,7 @@
     color: $text-on-secondary;
     outline: none;
     text-align: center;
-    padding: 2px;
+    padding: 4px;
 
     ::placeholder {
       color: $text-on-secondary;

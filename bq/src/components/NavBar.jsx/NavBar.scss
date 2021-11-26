@@ -6,7 +6,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 10px;
+    margin: 10px 0px 0px 25px;
 
     padding: 5px;
 
@@ -22,7 +22,8 @@
 }
 .textlogout{
     display: flex;
-    margin-right: 30px;
+    margin-top: 37px;
+    margin-right: 65px;
     color: $primary;
     cursor:pointer;
     align-items: center;
