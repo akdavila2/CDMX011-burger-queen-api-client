@@ -1,26 +1,18 @@
 import React from "react";
-
 import { FoodMenu } from "./FoodMenu";
 
-const DataIteration = ({ data }) => {
-  console.log("1" + data);
+export const DataIteration = (props) => {
+  const {products, onAdd}= props
   return (
     <>
-      {data.length > 0 ? (
-        data.map((el) => (
-          // console.log('map'+el)
-
-          <FoodMenu key={el.id} el={el} />
-        ))
+      {products.length> 0 ? (
+        products.map((product) => <FoodMenu key={product.id} product={product} onAdd={onAdd} />)
       ) : (
         <tr>
-          <td colSpan="3">Sin datos</td>
+          <td colSpan="3">No data</td>
         </tr>
       )}
-
     </>
   );
 };
-
-export default DataIteration;
 

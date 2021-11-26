@@ -1,7 +1,8 @@
 import React from "react";
-import img from "../../assets/notfound.png";
 import Footer from "../Footer/Footer";
-const NotFound = () => {
+import img from "../../assets/notfound.png";
+
+ const NotFound = () => {
   return (
     <>
       <div className="container__notfound">
@@ -14,3 +15,4 @@ const NotFound = () => {
   );
 };
 export default NotFound;
+

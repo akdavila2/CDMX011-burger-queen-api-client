@@ -1,12 +1,15 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { auth, login } from "../../lib/firebase";
-import logo from "../../assets/banner.png";
-import hamburger from "../../assets/hamburgertwo.png";
+import { onAuthStateChanged } from "firebase/auth";
+import SweetAlert from "sweetalert2";
 import LoginForm from "./LoginForm";
 import Footer from "../Footer/Footer";
-import { useNavigate } from "react-router-dom";
-import SweetAlert from "sweetalert2";
-import { onAuthStateChanged } from "firebase/auth";
+import logo from "../../assets/banner.png";
+import hamburger from "../../assets/hamburgertwo.png";
+
+
+
 
 const Login = () => {
   console.log(new Date());
@@ -17,7 +20,7 @@ const Login = () => {
       if (user) {
         navigate("/WaiterProfile");
         const uid = user.uid;
-        console.log("entry", uid);
+        console.log("entry", uid); 
       } else {
         navigate("/");
       }
@@ -43,17 +46,13 @@ const Login = () => {
           showCancelButton: true,
           cancelButtonText: "Ok",
           cancelButtonColor: "#FF4848",
-          background: "#FAEEE0",
-          // timer: 3000
+          background: "#FAEEE0"
         });
 
-        // setError(error.message);
-        // setTimeout(() => setError(""), 1500);
       }
     }
   };
   return (
-    // <div className="content">
     <div className="container__Login">
       <header className="logo">
         <img id="img-logo" src={logo} alt="logoBQ" />
@@ -64,14 +63,13 @@ const Login = () => {
       <section className="column">
         <div className="login__form">
           <LoginForm handleSubmit={handleSubmit} />
-          {/* <div className="error__section">{error}</div> */}
         </div>
       </section>
-      {/* </div> */}
       <div>
         <Footer />
       </div>
     </div>
   );
 };
-export default Login;
+export default Login; 
+
