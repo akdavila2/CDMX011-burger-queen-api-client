@@ -97,7 +97,7 @@
       color: $text-on-primary;
       width: 80%;
       text-indent: 4.5vh;
-
+      font-size: 3vh;
       &:focus {
         border-bottom-color: $secondary;
       }
@@ -117,7 +117,6 @@
       width: 30px;
       height: 30px;
       margin-left: -31vw;
-      
     }
 
     @-moz-document url-prefix() {
