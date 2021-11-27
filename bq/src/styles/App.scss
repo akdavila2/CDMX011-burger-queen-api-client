@@ -13,9 +13,10 @@ body {
   overflow-x: hidden !important;
   line-height: 10px;
   color: $text-on-primary;
+  max-width: 200vw;
 }
 .root {
   min-height: 90vh;
-  max-width: 50vw;
+
   overflow-x: hidden;
 }

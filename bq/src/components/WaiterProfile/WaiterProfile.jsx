@@ -98,7 +98,7 @@ const WaiterProfile = () => {
           <section className="column__container">
             <OrderSummary cleanOrder= {cleanOrder}  orderItems={orderItems} onRemove={onRemove} createOrder={createOrder} />
           </section>
-          <section className="column__container">
+          <section className="column-container-right">
             <MenuOption setTypeFood={setTypeFood} />
             <div className="container-food">
               {loading && <PreLoad />}
