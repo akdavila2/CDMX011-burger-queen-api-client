@@ -3,6 +3,11 @@ import React from "react";
 export const FoodOrder = (props) => {
   let { order } = props;
 
+  // order.orderItems.map(val=>{
+  //   console.log(val.image)
+  // })
+//https://api-burger-heroku.herokuapp.com/order?status=Pending
+
   return (
     <div>
       <picture>Foto
