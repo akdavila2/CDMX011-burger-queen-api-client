@@ -40,21 +40,23 @@ export const FoodOrder = (props) => {
                 <img className="img-order" src={val.image} alt={val.image} />
                 <p>{val.qty}</p>
               </div>
-              <div>
+              <div className="name-order">
                 <p>{val.name}</p>
               </div>
             </section>
           );
         })}
       </section>
-
-      <button className="secondary-button"
-        onClick={() => {
-          console.log("clicking");
-        }}
-      >
-        Ready
-      </button>
+      <section className="action-btn">
+        <button
+          className="secondary-button"
+          onClick={() => {
+            console.log("clicking");
+          }}
+        >
+          Ready
+        </button>
+      </section>
     </div>
   );
 };
