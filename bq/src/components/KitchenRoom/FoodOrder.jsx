@@ -48,7 +48,7 @@ export const FoodOrder = (props) => {
         })}
       </section>
 
-      <button
+      <button className="secondary-button"
         onClick={() => {
           console.log("clicking");
         }}
