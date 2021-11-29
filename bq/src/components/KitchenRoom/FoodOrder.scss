@@ -1,0 +1,50 @@
+@import "../../styles/variables";
+.content-order {
+  background-color: rgba(216, 206, 206, 0.2);
+  height: 20vh;
+  width: 90%;
+  .icon {
+    height: 20px;
+    width: 20px;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin: 2vw;
+
+    .content-profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  .content-products{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+     
+
+    .content-items{
+        background-color: $line-input;
+        height: 10vh;
+        width: 13vw;
+        border-radius: 10px;
+        color:$text-on-secondary;
+        display: flex;
+        flex-direction: column;
+        line-height: -50px;
+        padding: 0%;
+        .img-qty{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    }
+    .img-order{
+        height: 60px;
+        width: 70px;
+    }
+  }
+}
