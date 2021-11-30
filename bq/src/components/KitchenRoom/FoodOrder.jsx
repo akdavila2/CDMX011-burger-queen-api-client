@@ -1,6 +1,6 @@
 import React from "react";
 
-// import { auth } from "../../lib/firebase";
+//import { auth } from "../../lib/firebase";
 import iconUser from "../../assets/user.png";
 import iconClock from "../../assets/clock.png";
 export const FoodOrder =  (props) => {
