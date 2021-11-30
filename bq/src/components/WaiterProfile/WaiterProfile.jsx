@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { helpHttp } from "../../helpers/helpHttp.js";
 import SweetAlert from "sweetalert2";
+import { auth } from "../../lib/firebase.js";
 import PreLoad from "../PreLoad/PreLoad";
 import NotFound from "../NotFound/NotFound";
 import NavBar from "../NavBar.jsx/NavBar";
 import MenuOption from "./MenuOption.jsx";
 import OrderSummary from "./OrderSummary";
-import Footer from "../Footer/Footer"
+import Footer from "../Footer/Footer";
 import { DataIteration } from "../WaiterProfile/DataIteration";
 
-
 const WaiterProfile = (uid) => {
-  console.log(uid)
+  console.log(uid);
   const [db, setDb] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [typeFood, setTypeFood] = useState("Breakfast");
   const [orderItems, setOrderItems] = useState([]);
 
-  const cleanOrder = () => { setOrderItems([]); }
+  const cleanOrder = () => {
+    setOrderItems([]);
+  };
 
   const onAdd = (product) => {
     const exist = orderItems.find((x) => x.id === product.id);
@@ -44,8 +46,7 @@ const WaiterProfile = (uid) => {
       );
     }
   };
-  let url = `https://my-json-server.typicode.com/akdavila2/api_burger/product?type=${typeFood}`;
-  //let url = `http://localhost:5000/product?type=${typeFood}`;
+  let url = `https://api-burger-heroku.herokuapp.com/product?type=${typeFood}`;
   let api = helpHttp();
 
   useEffect(() => {
@@ -63,31 +64,43 @@ const WaiterProfile = (uid) => {
         setLoading(false);
       });
   }, [url]);
+  const user = auth.currentUser;
+  console.log("user is", user.email);
 
   const createOrder = (dataOrder, total, name) => {
-
     const id = Date.now();
 
     let options = {
-      body: { id: id, ...dataOrder, total, status: 'Pending', userName: name, dateOrder: new Date() },
+      body: {
+        id: id,
+        ...dataOrder,
+        total,
+        status: "Pending",
+        userName: name,
+        dateOrder: new Date(),
+      },
       headers: { "content-type": "application/json" },
     };
 
-    api.post('https://my-json-server.typicode.com/akdavila2/api_burger/order', options).then((res) => {
-      console.log(res);
-      if (!res.err) {
-        new SweetAlert({
-          title: "Order shipped",
-          text: "Your order has been sent to the chef",
-          showConfirmButton: true,
-          confirmButtonColor: "#FF4848",
-          background: "#FAEEE0",
-
-        });
-      } else {
-        setError(res);
-      }
-    });
+    api
+      .post(
+        "https://api-burger-heroku.herokuapp.com/order",
+        options
+      )
+      .then((res) => {
+        console.log(res);
+        if (!res.err) {
+          new SweetAlert({
+            title: "Order shipped",
+            text: "Your order has been sent to the chef",
+            showConfirmButton: true,
+            confirmButtonColor: "#FF4848",
+            background: "#FAEEE0",
+          });
+        } else {
+          setError(res);
+        }
+      });
   };
 
   return (
@@ -96,14 +109,18 @@ const WaiterProfile = (uid) => {
         <NavBar />
         <div className="container__menu">
           <section className="column__container">
-            <OrderSummary cleanOrder={cleanOrder} orderItems={orderItems} onRemove={onRemove} createOrder={createOrder} />
+            <OrderSummary
+              cleanOrder={cleanOrder}
+              orderItems={orderItems}
+              onRemove={onRemove}
+              createOrder={createOrder}
+            />
           </section>
           <section className="column__container">
             <MenuOption setTypeFood={setTypeFood} />
             {loading && <PreLoad />}
             {error && <NotFound />}
             <div className="container-food">
-
               {db && <DataIteration products={db} onAdd={onAdd} />}
             </div>
           </section>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { FoodOrder } from './FoodOrder';
+import { FoodOrder } from './FoodOrder'
 export const OrderIteration = (props) => {
     const {orders}= props
     return (
