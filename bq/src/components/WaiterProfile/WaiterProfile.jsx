@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { helpHttp } from "../../helpers/helpHttp.js";
 import SweetAlert from "sweetalert2";
+import { auth } from "../../lib/firebase.js";
 import PreLoad from "../PreLoad/PreLoad";
 import NotFound from "../NotFound/NotFound";
 import NavBar from "../NavBar.jsx/NavBar";
@@ -63,6 +64,8 @@ const WaiterProfile = (uid) => {
         setLoading(false);
       });
   }, [url]);
+  const user = auth.currentUser;
+  console.log("user is", user.email);
 
   const createOrder = (dataOrder, total, name) => {
     const id = Date.now();
