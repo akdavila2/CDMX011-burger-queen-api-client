@@ -8,11 +8,7 @@ import Footer from "../Footer/Footer";
 import logo from "../../assets/banner.png";
 import hamburger from "../../assets/hamburgertwo.png";
 
-
-
-
 const Login = () => {
-  console.log(new Date());
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -46,9 +42,8 @@ const Login = () => {
           showCancelButton: true,
           cancelButtonText: "Ok",
           cancelButtonColor: "#FF4848",
-          background: "#FAEEE0"
+          background: "#FAEEE0",
         });
-
       }
     }
   };
@@ -71,5 +66,4 @@ const Login = () => {
     </div>
   );
 };
-export default Login; 
-
+export default Login;
