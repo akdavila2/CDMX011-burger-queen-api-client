@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { helpHttp } from "../../helpers/helpHttp.js";
 import SweetAlert from "sweetalert2";
-import { auth } from "../../lib/firebase.js";
+
 import PreLoad from "../PreLoad/PreLoad";
 import NotFound from "../NotFound/NotFound";
 import NavBar from "../NavBar.jsx/NavBar";
@@ -9,7 +9,7 @@ import MenuOption from "./MenuOption.jsx";
 import OrderSummary from "./OrderSummary";
 import Footer from "../Footer/Footer";
 import { DataIteration } from "../WaiterProfile/DataIteration";
-
+import { useAuthContext } from "../context/AuthContext.js";
 const WaiterProfile = (uid) => {
   console.log(uid);
   const [db, setDb] = useState(null);
@@ -17,6 +17,8 @@ const WaiterProfile = (uid) => {
   const [loading, setLoading] = useState(false);
   const [typeFood, setTypeFood] = useState("Breakfast");
   const [orderItems, setOrderItems] = useState([]);
+  const { ready} = useAuthContext();
+ 
 
   const cleanOrder = () => {
     setOrderItems([]);
@@ -64,11 +66,10 @@ const WaiterProfile = (uid) => {
         setLoading(false);
       });
   }, [url]);
-  const user = auth.currentUser;
-  console.log("user is", user.email);
+
+
   const date = new Date();
-  const dateToday = date.toLocaleTimeString();
-  console.log("soy fecha", dateToday)
+
 
 
   const createOrder = (dataOrder, total, name) => {
@@ -108,7 +109,7 @@ const WaiterProfile = (uid) => {
         }
       });
   };
-
+  if (!ready) return null;
   return (
     <div>
       <div className="content__waiter__profile">

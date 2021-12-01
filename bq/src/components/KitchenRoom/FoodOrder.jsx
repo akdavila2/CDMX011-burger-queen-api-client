@@ -1,21 +1,28 @@
 import React from "react";
+import { useAuthContext } from "../context/AuthContext";
 
-//import { auth } from "../../lib/firebase";
 import iconUser from "../../assets/user.png";
 import iconClock from "../../assets/clock.png";
 export const FoodOrder = (props) => {
   let { order, updateData } = props;
-  const date = new Date();
-  // const user =  auth.currentUser;
-  // console.log("user is",  user.uid);
-  console.log(
-    "hora actual",
-    date.toLocaleTimeString(),
-    "hora orden",
-    order.hoursOrder,
-    "resta horas",
-    order.hoursOrder - date.toLocaleTimeString()
-  );
+  const { ready, user } = useAuthContext();
+  if (!ready) return null;
+  //const date = new Date();
+  //const user =  auth.currentUser;
+  //console.log("user is",  user.uid);
+  // console.log(
+  //   "hora actual",
+  //   date.toLocaleTimeString(),
+  //   "hora orden",
+  //   order.hoursOrder,
+  //   "resta horas",
+  //   order.hoursOrder - date.toLocaleTimeString()
+  // );
+  const onclick = () => {
+    console.log("clicking");
+    updateData(order);
+  };
+
   return (
     <div className="content-order">
       <header>
@@ -29,8 +36,8 @@ export const FoodOrder = (props) => {
         </div>
         <div className="content-profile">
           <img className="icon" src={iconUser} alt="iconUser" />
-          <p>Flor</p>
-          {/* <p>{user.email}</p> */}
+          {/* <p>Flor</p> */}
+          <p>{user.email}</p>
         </div>
       </header>
       <section className="content-products">
@@ -47,14 +54,7 @@ export const FoodOrder = (props) => {
         })}
       </section>
       <section className="action-btn">
-        <button
-          className="secondary-button"
-          onClick={() => {
-            console.log("clicking");
-            console.log(updateData())
-            updateData(order);
-          }}
-        >
+        <button className="secondary-button" onClick={onclick}>
           Ready
         </button>
       </section>

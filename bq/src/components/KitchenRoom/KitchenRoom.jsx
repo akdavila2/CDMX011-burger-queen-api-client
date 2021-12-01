@@ -5,12 +5,12 @@ import Footer from "../Footer/Footer";
 import PreLoad from "../PreLoad/PreLoad";
 import { NotFound } from "http-errors";
 import { OrderIteration } from "./OrderIteration";
-export const KitchenRoom = ({order}) => {
+export const KitchenRoom = ({ order }) => {
   const [db, setDb] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   //const [dataToEdit, setDataToEdit] = useState(null);
-console.log("soy order", order)
+
   let url = `https://api-burger-heroku.herokuapp.com/order?status=Pending`;
   let api = helpHttp();
   useEffect(() => {
@@ -28,8 +28,11 @@ console.log("soy order", order)
         setLoading(false);
       });
   }, [url]);
-  const date = new Date();
-  const updateData = (order) => {
+
+  const updateData = async (order) => {
+    const date = new Date();
+    console.trace("soy order", order);
+
     let endpoint = `https://api-burger-heroku.herokuapp.com/order/${order.id}`;
     //console.log(endpoint);
 
@@ -41,15 +44,13 @@ console.log("soy order", order)
       headers: { "content-type": "application/json" },
     };
 
-    api.put(endpoint, options).then((res) => {
-      //console.log(res);
-      if (!res.err) {
-        let newData = db.map((el) => (el.id === order.id ? order : el));
-        setDb(newData);
-      } else {
-        setError(res);
-      }
-    });
+    const response = await api.put(endpoint, options);
+    if (response.err) {
+      return setError(response);
+    }
+    let newData = db.map((el) => (el.id === order.id ? order : el));
+    setDb(newData);
+
   };
 
   return (

@@ -1,50 +1,44 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { auth, login } from "../../lib/firebase";
-import { onAuthStateChanged } from "firebase/auth";
+import { login } from "../../lib/firebase";
+
 import SweetAlert from "sweetalert2";
 import LoginForm from "./LoginForm";
 import Footer from "../Footer/Footer";
 import logo from "../../assets/banner.png";
 import hamburger from "../../assets/hamburgertwo.png";
+import { useAuthContext } from "../context/AuthContext";
 
 const Login = () => {
   const navigate = useNavigate();
-
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        navigate("/WaiterProfile");
-        const uid = user.uid;
-        console.log("entry", uid);
-      } else {
-        navigate("/");
-      }
-    });
-    // eslint-disable-next-line
-  }, []);
-
+  const { ready, user, auth } = useAuthContext();
+  if (!ready) return null;
+  console.log(user)
+  if (user?.uid) {
+    console.log(66)
+    navigate("/WaiterProfile");
+    return null;
+  }
+  console.log(user, auth.currentUser);
   const handleSubmit = async (email, password) => {
     const user = auth.currentUser;
-    if (user) {
+    if (user) return navigate("/WaiterProfile");
+
+    try {
+      await login(email, password);
       navigate("/WaiterProfile");
-    } else {
-      try {
-        await login(email, password);
-        navigate("/WaiterProfile");
-      } catch (error) {
-        console.error(error);
-        new SweetAlert({
-          title: "Error",
-          text: error.message,
-          icon: "error",
-          showConfirmButton: false,
-          showCancelButton: true,
-          cancelButtonText: "Ok",
-          cancelButtonColor: "#FF4848",
-          background: "#FAEEE0",
-        });
-      }
+    } catch (error) {
+      console.error(error);
+      new SweetAlert({
+        title: "Error",
+        text: error.message,
+        icon: "error",
+        showConfirmButton: false,
+        showCancelButton: true,
+        cancelButtonText: "Ok",
+        cancelButtonColor: "#FF4848",
+        background: "#FAEEE0",
+      });
     }
   };
   return (
