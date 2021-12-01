@@ -3,11 +3,19 @@ import React from "react";
 //import { auth } from "../../lib/firebase";
 import iconUser from "../../assets/user.png";
 import iconClock from "../../assets/clock.png";
-export const FoodOrder =  (props) => {
-  let { order } = props;
+export const FoodOrder = (props) => {
+  let { order, updateData } = props;
+  const date = new Date();
   // const user =  auth.currentUser;
   // console.log("user is",  user.uid);
-
+  console.log(
+    "hora actual",
+    date.toLocaleTimeString(),
+    "hora orden",
+    order.hoursOrder,
+    "resta horas",
+    order.hoursOrder - date.toLocaleTimeString()
+  );
   return (
     <div className="content-order">
       <header>
@@ -17,7 +25,7 @@ export const FoodOrder =  (props) => {
         </div>
         <div className="content-profile">
           <img className="icon" src={iconClock} alt="iconClock" />
-          <p>10:00</p>
+          <p>{order.hoursOrder}</p>
         </div>
         <div className="content-profile">
           <img className="icon" src={iconUser} alt="iconUser" />
@@ -33,10 +41,7 @@ export const FoodOrder =  (props) => {
                 <img className="img-order" src={val.image} alt={val.image} />
                 <p>{val.qty}</p>
               </div>
-              {/* <div className="name-order">
-              
-              </div> */}
-              <p id="food-name">{val.name}</p> 
+              <p id="food-name">{val.name}</p>
             </section>
           );
         })}
@@ -46,6 +51,8 @@ export const FoodOrder =  (props) => {
           className="secondary-button"
           onClick={() => {
             console.log("clicking");
+            console.log(updateData())
+            updateData(order);
           }}
         >
           Ready

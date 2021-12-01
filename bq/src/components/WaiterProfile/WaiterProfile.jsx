@@ -66,6 +66,10 @@ const WaiterProfile = (uid) => {
   }, [url]);
   const user = auth.currentUser;
   console.log("user is", user.email);
+  const date = new Date();
+  const dateToday = date.toLocaleTimeString();
+  console.log("soy fecha", dateToday)
+
 
   const createOrder = (dataOrder, total, name) => {
     const id = Date.now();
@@ -77,7 +81,9 @@ const WaiterProfile = (uid) => {
         total,
         status: "Pending",
         userName: name,
-        dateOrder: new Date(),
+        dateOrder:  date.toDateString(),
+        hoursOrder: date.toLocaleTimeString(),
+        hoursFinish: "",
       },
       headers: { "content-type": "application/json" },
     };

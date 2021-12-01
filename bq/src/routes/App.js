@@ -4,16 +4,14 @@ import WaiterProfile from "../components/WaiterProfile/WaiterProfile";
 import Login from "../components/Login/Login";
 import PrivateRoute from "../components/PrivateRoute";
 import NotFound from "../components/NotFound/NotFound";
-import { KitchenRoom } from '../components/KitchenRoom/KitchenRoom';
-import { Timer } from '../components/KitchenRoom/Timer';
+import { KitchenRoom } from "../components/KitchenRoom/KitchenRoom";
 
 const App = () => {
   return (
     <div className="App">
       <Router>
         <Routes>
-        <Route exact path="/Timer" element={<Timer />} />
-        <Route exact path="/KitchenRoom" element={<KitchenRoom />} />
+          <Route exact path="/KitchenRoom" element={<KitchenRoom />} />
           <Route exact path="/" element={<Login />} />
           <Route
             exact
