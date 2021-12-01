@@ -19,7 +19,7 @@ export const FoodOrder =  (props) => {
         </div>
         <div className="content-profile">
           <img className="icon" src={iconClock} alt="iconClock" />
-          <p>10:00</p>
+          <p>{new Date(order.dateOrder).toLocaleTimeString()}</p>
         </div>
         <div className="content-profile">
           <img className="icon" src={iconUser} alt="iconUser" />
