@@ -10,9 +10,10 @@ export const KitchenRoom = () => {
     const [db, setDb] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [dataToEdit, setDataToEdit] = useState(null);
 
     let url = `https://api-burger-heroku.herokuapp.com/order?status=Pending`;
-    // let api = helpHttp();
+    let api = helpHttp();
     useEffect(() => {
         setLoading(true);
         helpHttp()
@@ -29,6 +30,30 @@ export const KitchenRoom = () => {
           });
       }, [url]);
 
+      
+  const updateData = (data) => {
+    let {status, id, orderItems, total, userName, dateOrder, hoursOrder, hoursFinish }=data;
+    let endpoint = `https://api-burger-heroku.herokuapp.com/order/${data.id}`;
+    // console.log(endpoint);
+console.log(status, id);
+    let options = {
+      body:( {id, orderItems, total, userName, status:"Delivering", dateOrder, hoursOrder, hoursFinish}),
+      headers: { "content-type": "application/json" },
+    };
+    console.log(data)
+    console.log('soyUpdate')
+
+    api.put(endpoint, options).then((res) => {
+      console.log(res);
+      if (!res.err) {
+        let newData = db.map((el) => (el.id === data.id ? data : el));
+        setDb(newData);
+      } else {
+        setError(res);
+      }
+    });
+  };
+
 
   return (
     <>
@@ -38,7 +63,10 @@ export const KitchenRoom = () => {
         <div className="container-food">
               {loading && <PreLoad />}
               {error && <NotFound />}
-              {db && <OrderIteration orders={db}  />}
+              {db && <OrderIteration orders={db} 
+              updateData={updateData}
+              dataToEdit={dataToEdit}
+              setDataToEdit={setDataToEdit} />}
             </div>
         </div>
         <footer>

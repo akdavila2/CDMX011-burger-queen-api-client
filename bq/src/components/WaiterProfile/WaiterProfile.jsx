@@ -69,7 +69,7 @@ const WaiterProfile = (uid) => {
 
   const createOrder = (dataOrder, total, name) => {
     const id = Date.now();
-
+    const date = new Date();
     let options = {
       body: {
         id: id,
@@ -77,7 +77,9 @@ const WaiterProfile = (uid) => {
         total,
         status: "Pending",
         userName: name,
-        dateOrder: new Date(),
+        dateOrder:  date.toDateString(),
+        hoursOrder: date.toLocaleTimeString(),
+        hoursFinish: "",
       },
       headers: { "content-type": "application/json" },
     };
