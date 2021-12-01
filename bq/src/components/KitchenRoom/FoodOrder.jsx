@@ -3,26 +3,13 @@ import { useAuthContext } from "../context/AuthContext";
 
 import iconUser from "../../assets/user.png";
 import iconClock from "../../assets/clock.png";
-export const FoodOrder = (props) => {
-  let { order, updateData } = props;
-  const { ready, user } = useAuthContext();
-  if (!ready) return null;
-  //const date = new Date();
-  //const user =  auth.currentUser;
-  //console.log("user is",  user.uid);
-  // console.log(
-  //   "hora actual",
-  //   date.toLocaleTimeString(),
-  //   "hora orden",
-  //   order.hoursOrder,
-  //   "resta horas",
-  //   order.hoursOrder - date.toLocaleTimeString()
-  // );
-  const onclick = () => {
-    console.log("clicking");
-    updateData(order);
-  };
+export const FoodOrder =  (props) => {
+  let { order, updateData, setDataToEdit, dataToEdit } = props;
+  // const user =  auth.currentUser;
+  // console.log("user is",  user.uid);
+  
 
+  
   return (
     <div className="content-order">
       <header>
@@ -32,7 +19,7 @@ export const FoodOrder = (props) => {
         </div>
         <div className="content-profile">
           <img className="icon" src={iconClock} alt="iconClock" />
-          <p>{order.hoursOrder}</p>
+          <p>{new Date(order.dateOrder).toLocaleTimeString()}</p>
         </div>
         <div className="content-profile">
           <img className="icon" src={iconUser} alt="iconUser" />
@@ -54,7 +41,11 @@ export const FoodOrder = (props) => {
         })}
       </section>
       <section className="action-btn">
-        <button className="secondary-button" onClick={onclick}>
+        <button
+          className="secondary-button"
+          key={order.id}
+          onClick={(e) => {updateData(order)}}
+        >
           Ready
         </button>
       </section>

@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+
 import { login } from "../../lib/firebase";
 
 import SweetAlert from "sweetalert2";
@@ -10,8 +10,8 @@ import hamburger from "../../assets/hamburgertwo.png";
 import { useAuthContext } from "../context/AuthContext";
 
 const Login = () => {
-  const navigate = useNavigate();
-  const { ready, user, auth } = useAuthContext();
+ 
+  const { ready, user, auth, navigate } = useAuthContext();
   if (!ready) return null;
   console.log(user)
   if (user?.uid) {
