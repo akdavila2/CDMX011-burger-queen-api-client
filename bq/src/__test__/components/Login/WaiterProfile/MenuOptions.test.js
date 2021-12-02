@@ -1,9 +1,14 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import MenuOption from "../../../../components/WaiterProfile/MenuOption";
+//import { jsonMock } from "./jsonMock";
 
-const mockHandleTypeMenu = jest.fn();
-beforeEach(() => render(<MenuOption handleSubmit={mockHandleTypeMenu} />));
+//const data = jsonMock.product;
+// const breakfast = data.filter(items=> items.type==="Breakfast");
+// const lunch = data.filter(items=> items.type==="Lunch");
+// console.log("breakfast", breakfast, "lunch", lunch ); 
+
+beforeEach(() => render(<MenuOption />));
 test("should render LoginForm", () => {
   const contentSubTitle = screen.getByText("Menu");
   const contentOptionBreakfast = screen.getByRole("button", {
@@ -13,7 +18,8 @@ test("should render LoginForm", () => {
   expect(contentSubTitle).toBeInTheDocument();
   expect(contentOptionBreakfast).toBeInTheDocument();
   expect(contentOptionLunch).toBeInTheDocument();
-//   fireEvent.click(contentOptionBreakfast);
-//   fireEvent.click(contentOptionLunch);
-//   expect(contentOptionBreakfast).toHaveLength(4);
+  fireEvent.click(contentOptionBreakfast);
+  fireEvent.click(contentOptionLunch);
+ 
+ 
 });

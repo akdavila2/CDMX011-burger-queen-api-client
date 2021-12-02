@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { helpHttp } from "../../helpers/helpHttp.js";
 import SweetAlert from "sweetalert2";
-
+import { auth } from "../../lib/firebase.js";
 import PreLoad from "../PreLoad/PreLoad";
 import NotFound from "../NotFound/NotFound";
 import NavBar from "../NavBar.jsx/NavBar";
@@ -9,7 +10,6 @@ import MenuOption from "./MenuOption.jsx";
 import OrderSummary from "./OrderSummary";
 import Footer from "../Footer/Footer";
 import { DataIteration } from "../WaiterProfile/DataIteration";
-import { useAuthContext } from "../context/AuthContext.js";
 const WaiterProfile = (uid) => {
   console.log(uid);
   const [db, setDb] = useState(null);
@@ -17,13 +17,9 @@ const WaiterProfile = (uid) => {
   const [loading, setLoading] = useState(false);
   const [typeFood, setTypeFood] = useState("Breakfast");
   const [orderItems, setOrderItems] = useState([]);
-  const { ready} = useAuthContext();
- 
-
   const cleanOrder = () => {
     setOrderItems([]);
   };
-
   const onAdd = (product) => {
     const exist = orderItems.find((x) => x.id === product.id);
     if (exist) {
@@ -50,10 +46,9 @@ const WaiterProfile = (uid) => {
   };
   let url = `https://api-burger-heroku.herokuapp.com/product?type=${typeFood}`;
   let api = helpHttp();
-
   useEffect(() => {
     setLoading(true);
-    helpHttp()
+    api
       .get(url)
       .then((res) => {
         if (!res.err) {
@@ -66,15 +61,10 @@ const WaiterProfile = (uid) => {
         setLoading(false);
       });
   }, [url]);
-
-
-  const date = new Date();
-
-
-
+  const user = auth.currentUser;
+  console.log("user is", user.email);
   const createOrder = (dataOrder, total, name) => {
     const id = Date.now();
-
     let options = {
       body: {
         id: id,
@@ -82,13 +72,12 @@ const WaiterProfile = (uid) => {
         total,
         status: "Pending",
         userName: name,
-        dateOrder:  date.toDateString(),
-        hoursOrder: date.toLocaleTimeString(),
-        hoursFinish: "",
+        dateOrder: new Date(),
+        waiterName: user.email,
+
       },
       headers: { "content-type": "application/json" },
     };
-
     api
       .post(
         "https://api-burger-heroku.herokuapp.com/order",
@@ -109,7 +98,6 @@ const WaiterProfile = (uid) => {
         }
       });
   };
-  if (!ready) return null;
   return (
     <div>
       <div className="content__waiter__profile">

@@ -1,15 +1,9 @@
 import React from "react";
-import { useAuthContext } from "../context/AuthContext";
 
 import iconUser from "../../assets/user.png";
 import iconClock from "../../assets/clock.png";
-export const FoodOrder =  (props) => {
-  let { order, updateData, setDataToEdit, dataToEdit } = props;
-  // const user =  auth.currentUser;
-  // console.log("user is",  user.uid);
-  
-
-  
+export const FoodOrder = (props) => {
+  let { order, updateData, closeOrder } = props;
   return (
     <div className="content-order">
       <header>
@@ -23,8 +17,7 @@ export const FoodOrder =  (props) => {
         </div>
         <div className="content-profile">
           <img className="icon" src={iconUser} alt="iconUser" />
-          {/* <p>Flor</p> */}
-          <p>{user.email}</p>
+          <p>{order.waiterName}</p>
         </div>
       </header>
       <section className="content-products">
@@ -44,7 +37,11 @@ export const FoodOrder =  (props) => {
         <button
           className="secondary-button"
           key={order.id}
-          onClick={(e) => {updateData(order)}}
+          onClick={(e) => {
+            e.preventDefault();
+            updateData(order);
+            closeOrder(order);
+          }}
         >
           Ready
         </button>
