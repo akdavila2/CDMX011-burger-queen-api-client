@@ -68,7 +68,6 @@ export const KitchenRoom = () => {
     <>
       <div className="content-kitchenRoom">
         <NavBar />
-
         <div className="container-food">
           {loading && <PreLoad />}
           {error && <NotFound />}

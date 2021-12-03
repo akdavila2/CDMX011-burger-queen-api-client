@@ -5,11 +5,11 @@ import SweetAlert from "sweetalert2";
 import { auth } from "../../lib/firebase.js";
 import PreLoad from "../PreLoad/PreLoad";
 import NotFound from "../NotFound/NotFound";
-import NavBar from "../NavBar.jsx/NavBar";
 import MenuOption from "./MenuOption.jsx";
 import OrderSummary from "./OrderSummary";
 import Footer from "../Footer/Footer";
 import { DataIteration } from "../WaiterProfile/DataIteration";
+import NavBarWaiter from '../NavBar.jsx/NavBarWaiter';
 const WaiterProfile = (uid) => {
   console.log(uid);
   const [db, setDb] = useState(null);
@@ -101,7 +101,7 @@ const WaiterProfile = (uid) => {
   return (
     <div>
       <div className="content__waiter__profile">
-        <NavBar />
+        <NavBarWaiter />
         <div className="container__menu">
           <section className="column__container">
             <OrderSummary

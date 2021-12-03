@@ -1,8 +1,7 @@
 import React from "react";
-import iconUser from "../../assets/user.png";
-import iconClock from "../../assets/clock.png";
-export const FoodOrder = (props) => {
-  let { order, updateData, closeOrder } = props;
+import iconUser from "../../../assets/user.png";
+
+export const FoodOrdersReady = ({ order, closeOrder, deleteData }) => {
   return (
     <div className="content-order">
       <header>
@@ -11,12 +10,18 @@ export const FoodOrder = (props) => {
           <p>{order.userName}</p>
         </div>
         <div className="content-profile">
-          <img className="icon" src={iconClock} alt="iconClock" />
-          <p>{new Date(order.dateOrder).toLocaleTimeString()}</p>
-        </div>
-        <div className="content-profile">
-          <img className="icon" src={iconUser} alt="iconUser" />
-          <p>{order.waiterName}</p>
+          <button
+            className="third-button"
+            key={order.id}
+            onClick={(e) => {
+              e.preventDefault();
+              deleteData(order);
+              closeOrder(order);
+            }}
+          >
+            Delivering
+          </button>
+       
         </div>
       </header>
       <section className="content-products">
@@ -31,19 +36,6 @@ export const FoodOrder = (props) => {
             </section>
           );
         })}
-      </section>
-      <section className="action-btn">
-        <button
-          className="secondary-button"
-          key={order.id}
-          onClick={(e) => {
-            e.preventDefault();
-            updateData(order);
-            closeOrder(order);
-          }}
-        >
-          Ready
-        </button>
       </section>
     </div>
   );
