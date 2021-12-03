@@ -1,7 +1,7 @@
 import React from 'react'
 import { FoodOrdersReady } from './FoodOrdersReady';
 
-export const OrdersIteration = ({orders, closeOrder, deleteData}) => {
+export const OrdersIteration = ({orders, closeOrder,  deleteData}) => {
     return (
         <>
         {orders.length > 0 ? (

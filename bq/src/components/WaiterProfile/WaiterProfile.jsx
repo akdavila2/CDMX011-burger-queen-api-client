@@ -9,7 +9,7 @@ import MenuOption from "./MenuOption.jsx";
 import OrderSummary from "./OrderSummary";
 import Footer from "../Footer/Footer";
 import { DataIteration } from "../WaiterProfile/DataIteration";
-import NavBarWaiter from '../NavBar.jsx/NavBarWaiter';
+import NavBarWaiter from "../NavBar.jsx/NavBarWaiter";
 const WaiterProfile = (uid) => {
   console.log(uid);
   const [db, setDb] = useState(null);
@@ -44,22 +44,20 @@ const WaiterProfile = (uid) => {
       );
     }
   };
-  let url = `https://api-burger-heroku.herokuapp.com/product?type=${typeFood}`;
+  let url = `${process.env.REACT_APP_JSON_SERVER_PRODUCT}?type=${typeFood}`;
   let api = helpHttp();
   useEffect(() => {
     setLoading(true);
-    api
-      .get(url)
-      .then((res) => {
-        if (!res.err) {
-          setDb(res);
-          setError(null);
-        } else {
-          setDb(null);
-          setError(res);
-        }
-        setLoading(false);
-      });
+    api.get(url).then((res) => {
+      if (!res.err) {
+        setDb(res);
+        setError(null);
+      } else {
+        setDb(null);
+        setError(res);
+      }
+      setLoading(false);
+    });
   }, [url]);
   const user = auth.currentUser;
   console.log("user is", user.email);
@@ -74,15 +72,11 @@ const WaiterProfile = (uid) => {
         userName: name,
         dateOrder: new Date(),
         waiterName: user.email,
-
       },
       headers: { "content-type": "application/json" },
     };
     api
-      .post(
-        "https://api-burger-heroku.herokuapp.com/order",
-        options
-      )
+      .post(`${process.env.REACT_APP_JSON_SERVER_ORDER}`, options)
       .then((res) => {
         console.log(res);
         if (!res.err) {

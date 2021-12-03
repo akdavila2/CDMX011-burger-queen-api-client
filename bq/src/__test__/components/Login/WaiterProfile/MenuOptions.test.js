@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import MenuOption from "../../../../components/WaiterProfile/MenuOption";
 //import { jsonMock } from "./jsonMock";
 
@@ -18,8 +18,8 @@ test("should render LoginForm", () => {
   expect(contentSubTitle).toBeInTheDocument();
   expect(contentOptionBreakfast).toBeInTheDocument();
   expect(contentOptionLunch).toBeInTheDocument();
-  fireEvent.click(contentOptionBreakfast);
-  fireEvent.click(contentOptionLunch);
+  // fireEvent.click(contentOptionBreakfast);
+  // fireEvent.click(contentOptionLunch);
  
  
 });

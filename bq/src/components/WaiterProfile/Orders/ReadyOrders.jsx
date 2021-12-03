@@ -12,7 +12,7 @@ export const ReadyOrders = () => {
   const [db, setDb] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  let url = `https://api-burger-heroku.herokuapp.com/order`;
+  let url = `${process.env.REACT_APP_JSON_SERVER_ORDER}`;
   let api = helpHttp();
   useEffect(() => {
     const endpoint = `${url}?waiterName=waiter@burgerqueen.com&status=Delivering`;
@@ -32,7 +32,7 @@ export const ReadyOrders = () => {
   const deleteData = async (id) => {
     console.log("id de order is ", id)
     let isDelete = window.confirm(
-      `¿Are you sure to delete the record with the id '${id}'?`
+      `¿Are you sure to delete the record with the id '${id.id}'?`
     );
     if (isDelete) {
       let endpoint = `${url}/${id}`;
@@ -41,12 +41,13 @@ export const ReadyOrders = () => {
       };
       const response = await api.del(endpoint, options);
       if (!response.err) {
-        let newData = db.filter((el) => el.id !== id);
+        let newData = db.filter((el) => el.id !== id.id);
         setDb(newData);
       } else {
         setError(response);
       }
-    } else {
+    } 
+    else {
       return;
     }
   };

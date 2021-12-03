@@ -13,7 +13,7 @@ export const KitchenRoom = () => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  let url = `https://api-burger-heroku.herokuapp.com/order`;
+  let url = `${process.env.REACT_APP_JSON_SERVER_ORDER}`;
   let api = helpHttp();
   useEffect(() => {
     const endpoint = `${url}?status=Pending`;
