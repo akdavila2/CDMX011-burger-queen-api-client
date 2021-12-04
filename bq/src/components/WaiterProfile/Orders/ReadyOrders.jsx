@@ -5,8 +5,8 @@ import { helpHttp } from "../../../helpers/helpHttp.js";
 import NavBarWaiter from "../../NavBar.jsx/NavBarWaiter";
 import Footer from "../../Footer/Footer";
 import PreLoad from "../../PreLoad/PreLoad";
-import { NotFound } from "http-errors";
 import { OrdersIteration } from "./OrdersIteration";
+import NotFound from '../../NotFound/NotFound';
 
 export const ReadyOrders = () => {
   const [db, setDb] = useState(null);
