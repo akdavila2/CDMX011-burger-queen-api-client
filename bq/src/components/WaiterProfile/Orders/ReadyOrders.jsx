@@ -35,7 +35,7 @@ export const ReadyOrders = () => {
       `¿Are you sure to delete the record with the id '${id.id}'?`
     );
     if (isDelete) {
-      let endpoint = `${url}/${id}`;
+      let endpoint = `${url}/${id.id}`;
       let options = {
         headers: { "content-type": "application/json" },
       };
