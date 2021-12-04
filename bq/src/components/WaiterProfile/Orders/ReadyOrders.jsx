@@ -2,11 +2,14 @@
 import React, { useEffect, useState } from "react";
 import { helpHttp } from "../../../helpers/helpHttp.js";
 //import SweetAlert from "sweetalert2";
+import { auth } from "../../../lib/firebase.js";
 import NavBarWaiter from "../../NavBar.jsx/NavBarWaiter";
 import Footer from "../../Footer/Footer";
 import PreLoad from "../../PreLoad/PreLoad";
 import { OrdersIteration } from "./OrdersIteration";
 import NotFound from '../../NotFound/NotFound';
+
+const user = auth.currentUser;
 
 export const ReadyOrders = () => {
   const [db, setDb] = useState(null);
@@ -15,7 +18,7 @@ export const ReadyOrders = () => {
   let url = `${process.env.REACT_APP_JSON_SERVER_ORDER}`;
   let api = helpHttp();
   useEffect(() => {
-    const endpoint = `${url}?waiterName=waiter@burgerqueen.com&status=Delivering`;
+    const endpoint = `${url}?waiterName=${user.email}&status=Delivering`;
     setLoading(true);
     api.get(endpoint).then((res) => {
       if (!res.err) {
@@ -35,7 +38,7 @@ export const ReadyOrders = () => {
       `¿Are you sure to delete the record with the id '${id.id}'?`
     );
     if (isDelete) {
-      let endpoint = `${url}/${id}`;
+      let endpoint = `${url}/${id.id}`;
       let options = {
         headers: { "content-type": "application/json" },
       };
