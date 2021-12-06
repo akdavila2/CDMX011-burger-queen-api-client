@@ -11,6 +11,7 @@ export const OrdersIteration = ({orders, closeOrder,  deleteData}) => {
               order={order}
               deleteData={deleteData}
               closeOrder={closeOrder}
+            
             />
           ))
         ) : (
