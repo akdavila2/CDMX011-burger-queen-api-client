@@ -10,8 +10,8 @@ import OrderSummary from "./OrderSummary";
 import Footer from "../Footer/Footer";
 import { DataIteration } from "../WaiterProfile/DataIteration";
 import NavBarWaiter from "../NavBar.jsx/NavBarWaiter";
-const WaiterProfile = (uid) => {
-  console.log(uid);
+const WaiterProfile = () => {
+  
   const [db, setDb] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -60,7 +60,6 @@ const WaiterProfile = (uid) => {
     });
   }, [url]);
   const user = auth.currentUser;
-  console.log("user is", user.email);
   const createOrder = (dataOrder, total, name) => {
     const id = Date.now();
     let options = {
@@ -71,7 +70,7 @@ const WaiterProfile = (uid) => {
         status: "Pending",
         userName: name,
         dateOrder: new Date(),
-        waiterName: user.email,
+        waiterName: user.email
       },
       headers: { "content-type": "application/json" },
     };
