@@ -28,6 +28,8 @@ const Login = () => {
     } else {
       try {
         await login(email, password);
+        // const user = await fetch(`/users/${email}`).then(resp => resp.json())
+        // localStorage.setItem('user', user)
         navigate("/WaiterProfile");
       } catch (error) {
         console.error(error);

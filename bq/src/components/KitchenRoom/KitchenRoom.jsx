@@ -32,10 +32,10 @@ export const KitchenRoom = () => {
 
   const timer = (data) => {
     const arrive = new Date(data.dateOrder);
-    var diffMs = new Date() - arrive;
+    const diffMs = new Date() - arrive;
     // var diffHrs = Math.floor((diffMs % 86400000) / 3600000); // hours
-    var diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
-    const finishTime = diffMins; //minutes
+    const finishTime = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
+    // const finishTime = diffMins; //minutes
     return finishTime;
   };
 

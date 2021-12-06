@@ -9,16 +9,20 @@ import PreLoad from "../../PreLoad/PreLoad";
 import { OrdersIteration } from "./OrdersIteration";
 import NotFound from '../../NotFound/NotFound';
 
-const user = auth.currentUser;
+
 
 export const ReadyOrders = () => {
+  const user = auth.currentUser;
+  console.log('email user'+user.email)
   const [db, setDb] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  let url = `${process.env.REACT_APP_JSON_SERVER_ORDER}`;
+
+  const url = `${process.env.REACT_APP_JSON_SERVER_ORDER}`;
+  console.log('email'+user.uid)
+  const endpoint = `${url}?waiterName=${user.email}&status=Delivering`;
   let api = helpHttp();
   useEffect(() => {
-    const endpoint = `${url}?waiterName=${user.email}&status=Delivering`;
     setLoading(true);
     api.get(endpoint).then((res) => {
       if (!res.err) {
