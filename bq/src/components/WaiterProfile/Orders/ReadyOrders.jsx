@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { helpHttp } from "../../../helpers/helpHttp.js";
 import { auth } from "../../../lib/firebase.js";
 //import SweetAlert from "sweetalert2";
+import { auth } from "../../../lib/firebase.js";
 import NavBarWaiter from "../../NavBar.jsx/NavBarWaiter";
 import Footer from "../../Footer/Footer";
 import PreLoad from "../../PreLoad/PreLoad";
@@ -11,22 +12,20 @@ import NotFound from '../../NotFound/NotFound';
 //import { onAuthStateChanged } from "@firebase/auth";
 
 
+
+
 export const ReadyOrders = () => {
+  const user = auth.currentUser;
+  console.log('email user'+user.email)
   const [db, setDb] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  //const [currentUser, setCurrentUser] = useState({});
 
-  // onAuthStateChanged(auth, (user) => {
-  //   if (user) {
-  //   setCurrentUser(user);
-  //   console.log("ready user", setCurrentUser)
-  // }});
-  const user= auth.currentUser
-  let url = `${process.env.REACT_APP_JSON_SERVER_ORDER}`;
+  const url = `${process.env.REACT_APP_JSON_SERVER_ORDER}`;
+  console.log('email'+user.uid)
+  const endpoint = `${url}?waiterName=${user.email}&status=Delivering`;
   let api = helpHttp();
   useEffect(() => {
-    const endpoint = `${url}?waiterName=${user.email}.com&status=Delivering`;
     setLoading(true);
     api.get(endpoint).then((res) => {
       if (!res.err) {
