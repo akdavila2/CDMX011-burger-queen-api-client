@@ -1,12 +1,12 @@
 
-import React , {useState} from "react";
-import {  Navigate } from "react-router-dom";
+import  {useState} from "react";
+// import {  Navigate } from "react-router-dom";
 // import { auth } from "../lib/firebase";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { firebaseApp} from "../lib/firebase";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
-import WaiterProfile from "../components/WaiterProfile/WaiterProfile"
-import Login from "../components/Login/Login"
+// import WaiterProfile from "../components/WaiterProfile/WaiterProfile"
+// import Login from "../components/Login/Login"
 
 const auth2 = getAuth(firebaseApp);
 const firestore = getFirestore(firebaseApp);
