@@ -97,7 +97,7 @@
       color: $text-on-primary;
       width: 80%;
       text-indent: 4.5vh;
-
+      font-size: 3vh;
       &:focus {
         border-bottom-color: $secondary;
       }
@@ -167,10 +167,11 @@
       .icon {
         display: flex;
         margin-left: -27vw;
+        margin-right: 30vw;
       }
       @-moz-document url-prefix() {
         .icon {
-          margin-left: -53vw;
+          margin-left: -25vw;
         }
       }
     }
