@@ -177,3 +177,10 @@
     }
   }
 }
+select{
+  background-color: transparent;
+  color: $primary;
+  width: 85%;
+  height: 50px;
+  border-color: 2px solid $line-input;
+}

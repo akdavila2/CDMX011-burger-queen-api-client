@@ -3,15 +3,12 @@ import React, { useEffect, useState } from "react";
 import { helpHttp } from "../../../helpers/helpHttp.js";
 import { auth } from "../../../lib/firebase.js";
 //import SweetAlert from "sweetalert2";
-import { auth } from "../../../lib/firebase.js";
 import NavBarWaiter from "../../NavBar.jsx/NavBarWaiter";
 import Footer from "../../Footer/Footer";
 import PreLoad from "../../PreLoad/PreLoad";
 import { OrdersIteration } from "./OrdersIteration";
 import NotFound from '../../NotFound/NotFound';
 //import { onAuthStateChanged } from "@firebase/auth";
-
-
 
 
 export const ReadyOrders = () => {

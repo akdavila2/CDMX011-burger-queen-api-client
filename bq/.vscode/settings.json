@@ -1,11 +1,14 @@
 {
     "cSpell.words": [
         "Agua",
+        "APIKEY",
         "Aros",
+        "AUTHDOMAIN",
         "Bebida",
         "cebolla",
         "doble",
         "eliminar",
+        "Firestore",
         "fritas",
         "fruntas",
         "gaseosa",
@@ -14,13 +17,17 @@
         "Jardinez",
         "Jugo",
         "leche",
+        "MEASUREMENTID",
         "menucafenegro",
         "menusandwich",
+        "MESSAGINGSENDERID",
         "notfound",
         "preload",
+        "PROJECTID",
         "puede",
         "queso",
         "rcibir",
-        "salir"
+        "salir",
+        "STORAGEBUCKET"
     ]
 }
