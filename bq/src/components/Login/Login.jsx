@@ -1,51 +1,55 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { auth, login } from "../../lib/firebase";
 import { onAuthStateChanged } from "firebase/auth";
+import { useNavigate } from "react-router";
+import { auth } from "../../lib/firebase";
 import SweetAlert from "sweetalert2";
 import LoginForm from "./LoginForm";
+import { login } from "../../lib/firebase";
 import Footer from "../Footer/Footer";
 import logo from "../../assets/banner.png";
 import hamburger from "../../assets/hamburgertwo.png";
 const Login = () => {
   const navigate = useNavigate();
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-      if (user) {
-        navigate("/WaiterProfile");
-        const uid = user.uid;
-        console.log("entry", uid);
-      } else {
+      if (!user) {
         navigate("/");
+        console.log("no user logged in");
       }
     });
     // eslint-disable-next-line
   }, []);
+
   const handleSubmit = async (email, password) => {
-    const user = auth.currentUser;
-    if (user) {
-      navigate("/WaiterProfile");
-    } else {
-      try {
-        await login(email, password);
-        // const user = await fetch(`/users/${email}`).then(resp => resp.json())
-        // localStorage.setItem('user', user)
-        navigate("/WaiterProfile");
-      } catch (error) {
-        console.error(error);
-        new SweetAlert({
-          title: "Error",
-          text: error.message,
-          icon: "error",
-          showConfirmButton: false,
-          showCancelButton: true,
-          cancelButtonText: "Ok",
-          cancelButtonColor: "#FF4848",
-          background: "#FAEEE0",
-        });
-      }
+    try {
+      console.log("clicking");
+      const signIn = await login(email, password);
+      const user= auth.currentUser;
+      user.rol === "chef"
+        ? navigate("/KitchenRoom")
+        : user.rol === "waiter"
+        ? navigate("/WaiterProfile")
+        : navigate("/UserRegister");
+      console.log("im signIn", signIn);
+
+      // const user = await fetch(`/users/${email}`).then(resp => resp.json())
+      // localStorage.setItem('user', user)
+    } catch (error) {
+      console.error(error);
+      new SweetAlert({
+        title: "Error",
+        text: error.message,
+        icon: "error",
+        showConfirmButton: false,
+        showCancelButton: true,
+        cancelButtonText: "Ok",
+        cancelButtonColor: "#FF4848",
+        background: "#FAEEE0",
+      });
     }
   };
+
   return (
     <div className="container__Login">
       <header className="logo">

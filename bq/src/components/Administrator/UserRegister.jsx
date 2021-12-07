@@ -4,7 +4,7 @@ import { register } from "../../lib/firebase";
 import iconEmail from "../../assets/email.png";
 import iconPassword from "../../assets/password.png";
 import Footer from "../Footer/Footer";
-import NavBar from "../NavBar.jsx/NavBar";
+import { NavBarAdministrator } from '../NavBar.jsx/NavBarAdministrator';
 export const UserRegister = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -31,7 +31,7 @@ export const UserRegister = () => {
   return (
     <>
       <div className="container-register">
-        <NavBar />
+        <NavBarAdministrator />
         <section className="register-form">
           <div>
             <form onSubmit={submitHandler}>

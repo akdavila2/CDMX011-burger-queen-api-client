@@ -1,61 +1,45 @@
+import { useState } from "react";
+import { auth, firestore } from "../lib/firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
+//import { Home } from "./Administrator/Home";
+import Login from "./Login/Login";
+//import { UserRegister } from './Administrator/UserRegister';
 
-import  {useState} from "react";
-// import {  Navigate } from "react-router-dom";
-// import { auth } from "../lib/firebase";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { firebaseApp} from "../lib/firebase";
-import { getFirestore, doc, getDoc } from "firebase/firestore";
-// import WaiterProfile from "../components/WaiterProfile/WaiterProfile"
-// import Login from "../components/Login/Login"
-
-const auth2 = getAuth(firebaseApp);
-const firestore = getFirestore(firebaseApp);
-
-const PrivateRoute=({ children })=> {
-
+const PrivateRoute = ({ children }) => {
   const [user, setUser] = useState(null);
 
-  async function getRol(uid) {
-    const docuRef = doc(firestore, `usuarios/${uid}`);
-    const docuCifrada = await getDoc(docuRef);
-    const infoFinal = docuCifrada.data().rol;
-    return infoFinal;
-  }
+  const getRol = async (uid) => {
+    const docRef = doc(firestore, `users/${uid}`);
+    const docCipher = await getDoc(docRef);
+    const infoFinish = docCipher.data().rol;
+    return infoFinish;
+  };
 
-  function setUserWithFirebaseAndRol(usuarioFirebase) {
-    getRol(usuarioFirebase.uid).then((rol) => {
+  const setUserWithFirebaseAndRol = (userFirebase) => {
+    getRol(userFirebase.uid).then((rol) => {
       const userData = {
-        uid: usuarioFirebase.uid,
-        email: usuarioFirebase.email,
+        uid: userFirebase.uid,
+        email: userFirebase.email,
         rol: rol,
       };
       setUser(userData);
-      console.log("userData fianl", userData);
+      console.log("userData finish", userData);
     });
-  }
+  };
 
-  onAuthStateChanged(auth2, (usuarioFirebase) => {
-    if (usuarioFirebase) {
-      
+  onAuthStateChanged(auth, (userFirebase) => {
+    if (userFirebase) {
       if (!user) {
-        setUserWithFirebaseAndRol(usuarioFirebase);
+        setUserWithFirebaseAndRol(userFirebase);
       }
     } else {
       setUser(null);
     }
   });
-  // const user= auth.currentUser;
 
-  // const userFromServer = localStorage.getItem('user')
-
-  // if (userFromServer.role == )
-  let value=user;
-  console.log(user)
-  // return user ? children : <Navigate to="/" />;
-
-  // return <>{user ? <WaiterProfile user={user} /> : <Login />}</>;
-  // console.log(usuarioFirebase.rol)
-  // return user.rol === "admin" ? <AdminView /> : <UserView />
-  return value
-}
+  let value = user;
+  console.log("im value", { value });
+  return <>{user ? children : <Login />}</>;
+};
 export default PrivateRoute;
