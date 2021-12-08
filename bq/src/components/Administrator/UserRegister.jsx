@@ -6,13 +6,22 @@ import iconPassword from "../../assets/password.png";
 import Footer from "../Footer/Footer";
 import { NavBarAdministrator } from '../NavBar.jsx/NavBarAdministrator';
 export const UserRegister = () => {
+
+  
   const submitHandler = async (e) => {
     e.preventDefault();
-    const email = e.target.elements.email.value;
-    const password = e.target.elements.password.value;
-    const rol = e.target.elements.rol.value;
+    const emailUser = e.target.elements.emailUser.value;
+    const passwordUser = e.target.elements.passwordUser.value;
+    const rolUser = e.target.elements.rolUser.value;
     try {
-      await register(email, password, rol);
+      await register(emailUser, passwordUser, rolUser);
+      new SweetAlert({
+        title: "Registered user",
+        showConfirmButton: true,
+        confirmButtonColor: "#FF4848",
+        background: "#FAEEE0",
+      });
+      e.target.reset();
     } catch (error) {
       console.error(error);
       new SweetAlert({
@@ -38,8 +47,8 @@ export const UserRegister = () => {
               <div className="input__form">
                 <img className="icon" src={iconEmail} alt="iconEmail" />
                 <input
-                  type="email"
-                  id="email"
+                  type="emailUser"
+                  id="emailUser"
                   placeholder="write email"
                   required
                 />
@@ -47,13 +56,13 @@ export const UserRegister = () => {
               <div className="input__form">
                 <img className="icon" src={iconPassword} alt="iconPassword" />
                 <input
-                  type="password"
-                  id="password"
+                  type="passwordUser"
+                  id="passwordUser"
                   placeholder="write password"
                   required
                 />
               </div>
-              <select id="rol" required>
+              <select id="rolUser" required>
                 <option value="0">Rol</option>
                 <option value="admin">Administrator</option>
                 <option value="chef">Chef</option>

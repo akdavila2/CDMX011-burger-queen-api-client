@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect} from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router";
-import { auth } from "../../lib/firebase";
+import { auth, firestore } from "../../lib/firebase";
+import { doc, getDoc } from "firebase/firestore";
 import SweetAlert from "sweetalert2";
 import LoginForm from "./LoginForm";
 import { login } from "../../lib/firebase";
@@ -10,6 +11,28 @@ import logo from "../../assets/banner.png";
 import hamburger from "../../assets/hamburgertwo.png";
 const Login = () => {
   const navigate = useNavigate();
+
+  // const [userRol, setUserRol] = useState(null);
+
+  const getRol = async (uid) => {
+    const docRef = doc(firestore, `users/${uid}`);
+    const docCipher = await getDoc(docRef);
+    const infoFinish = docCipher.data().rol;
+    return infoFinish;
+  };
+  // const setUserWithFirebaseAndRol = (userFirebase) => {
+  //   getRol(userFirebase.uid).then((rol) => {
+  //     const userData = {
+  //       uid: userFirebase.uid,
+  //       email: userFirebase.email,
+  //       rol: rol,
+  //     };
+  //     setUserRol(userData);
+  //     console.log("userData finish", userData);
+  //   });
+  // };
+
+  
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -20,18 +43,22 @@ const Login = () => {
     });
     // eslint-disable-next-line
   }, []);
-
+  
   const handleSubmit = async (email, password) => {
     try {
       console.log("clicking");
       const signIn = await login(email, password);
       const user= auth.currentUser;
-      user.rol === "chef"
-        ? navigate("/KitchenRoom")
-        : user.rol === "waiter"
-        ? navigate("/WaiterProfile")
-        : navigate("/UserRegister");
-      console.log("im signIn", signIn);
+     getRol(user.uid).then((userRol)=>{
+      userRol === "chef"
+      ? navigate("/KitchenRoom")
+      : userRol === "waiter"
+      ? navigate("/WaiterProfile")
+      : navigate("/UserRegister");
+    console.log("im signIn", signIn);
+      
+  })
+      
 
       // const user = await fetch(`/users/${email}`).then(resp => resp.json())
       // localStorage.setItem('user', user)
