@@ -1,7 +1,7 @@
 import React from 'react'
 import { FoodOrdersReady } from './FoodOrdersReady';
 
-export const OrdersIteration = ({orders, closeOrder,  deleteData}) => {
+export const OrdersIteration = ({orders, closeOrder,  updateData}) => {
     return (
         <>
         {orders.length > 0 ? (
@@ -9,7 +9,7 @@ export const OrdersIteration = ({orders, closeOrder,  deleteData}) => {
             <FoodOrdersReady
               key={order.id}
               order={order}
-              deleteData={deleteData}
+              updateData={updateData}
               closeOrder={closeOrder}
             
             />

@@ -11,7 +11,6 @@ jest.mock('react-router-dom', () => ({
    useNavigate: () => mockHandleSubmit,
  }));
 
-
 beforeEach(()=>render(<Login />));
 
 test('should render Login', async () => {
@@ -25,6 +24,5 @@ test('should render Login', async () => {
     expect(contentPassword).toBeInTheDocument()
     expect(contentSubmit).toBeInTheDocument()
     expect(footer).toBeInTheDocument()
-
 
 });

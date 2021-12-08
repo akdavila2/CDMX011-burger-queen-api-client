@@ -1,4 +1,4 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router";
 import { auth, firestore } from "../../lib/firebase";
@@ -20,19 +20,6 @@ const Login = () => {
     const infoFinish = docCipher.data().rol;
     return infoFinish;
   };
-  // const setUserWithFirebaseAndRol = (userFirebase) => {
-  //   getRol(userFirebase.uid).then((rol) => {
-  //     const userData = {
-  //       uid: userFirebase.uid,
-  //       email: userFirebase.email,
-  //       rol: rol,
-  //     };
-  //     setUserRol(userData);
-  //     console.log("userData finish", userData);
-  //   });
-  // };
-
-  
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -43,23 +30,20 @@ const Login = () => {
     });
     // eslint-disable-next-line
   }, []);
-  
+
   const handleSubmit = async (email, password) => {
     try {
       console.log("clicking");
       const signIn = await login(email, password);
-      const user= auth.currentUser;
-     getRol(user.uid).then((userRol)=>{
-      userRol === "chef"
-      ? navigate("/KitchenRoom")
-      : userRol === "waiter"
-      ? navigate("/WaiterProfile")
-      : navigate("/UserRegister");
-    console.log("im signIn", signIn);
-      
-  })
-      
-
+      const user = auth.currentUser;
+      getRol(user.uid).then((userRol) => {
+        userRol === "chef"
+          ? navigate("/KitchenRoom")
+          : userRol === "waiter"
+          ? navigate("/WaiterProfile")
+          : navigate("/UserRegister");
+        console.log("im signIn", signIn);
+      });
       // const user = await fetch(`/users/${email}`).then(resp => resp.json())
       // localStorage.setItem('user', user)
     } catch (error) {
