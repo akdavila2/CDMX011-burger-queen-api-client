@@ -1,4 +1,4 @@
-import React, { useEffect} from "react";
+import React, { useEffect, } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router";
 import { auth, firestore } from "../../lib/firebase";
@@ -20,20 +20,7 @@ const Login = () => {
     const infoFinish = docCipher.data().rol;
     return infoFinish;
   };
-  // const setUserWithFirebaseAndRol = (userFirebase) => {
-  //   getRol(userFirebase.uid).then((rol) => {
-  //     const userData = {
-  //       uid: userFirebase.uid,
-  //       email: userFirebase.email,
-  //       rol: rol,
-  //     };
-  //     setUserRol(userData);
-  //     console.log("userData finish", userData);
-  //   });
-  // };
-
   
-
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (!user) {
@@ -49,12 +36,13 @@ const Login = () => {
       console.log("clicking");
       const signIn = await login(email, password);
       const user= auth.currentUser;
+      if(user){console.log(user)}
      getRol(user.uid).then((userRol)=>{
       userRol === "chef"
       ? navigate("/KitchenRoom")
       : userRol === "waiter"
       ? navigate("/WaiterProfile")
-      : navigate("/UserRegister");
+      : userRol === "admin" ? navigate("/AdminProfile") : navigate("/") ;
     console.log("im signIn", signIn);
       
   })

@@ -6,7 +6,7 @@ import PrivateRoute from "../components/PrivateRoute";
 import NotFound from "../components/NotFound/NotFound";
 import { KitchenRoom } from "../components/KitchenRoom/KitchenRoom";
 import { ReadyOrders } from "../components/WaiterProfile/Orders/ReadyOrders";
-import { UserRegister } from "../components/Administrator/UserRegister";
+import { AdminProfile } from "../components/Administrator/AdminProfile";
 //import { Home } from "../components/Administrator/Home";
 import { ManageProducts } from "../components/Administrator/ManageProducts";
 
@@ -17,7 +17,7 @@ const App = () => {
         <Routes>
           <Route exact path="/ManageProducts" element={<ManageProducts />} />
           {/* <Route exact path="/Home" element={<Home />} /> */}
-          <Route exact path="/UserRegister" element={<UserRegister />} />
+          <Route exact path="/AdminProfile" element={<AdminProfile />} />
           <Route
             exact
             path="/ReadyOrders"

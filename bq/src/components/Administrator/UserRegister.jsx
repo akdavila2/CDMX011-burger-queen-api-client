@@ -3,8 +3,7 @@ import SweetAlert from "sweetalert2";
 import { register } from "../../lib/firebase";
 import iconEmail from "../../assets/email.png";
 import iconPassword from "../../assets/password.png";
-import Footer from "../Footer/Footer";
-import { NavBarAdministrator } from '../NavBar.jsx/NavBarAdministrator';
+
 export const UserRegister = () => {
 
   
@@ -39,10 +38,10 @@ export const UserRegister = () => {
 
   return (
     <>
-      <div className="container-register">
-        <NavBarAdministrator />
+      {/* <div className="container-register"> */}
+        {/* <NavBarAdministrator /> */}
         <section className="register-form">
-          <div>
+          {/* <div> */}
             <form onSubmit={submitHandler}>
               <div className="input__form">
                 <img className="icon" src={iconEmail} alt="iconEmail" />
@@ -70,12 +69,16 @@ export const UserRegister = () => {
               </select>
               <button className="register-button">Register </button>
             </form>
-          </div>
+          {/* </div> */}
+          
         </section>
-      </div>
+        {/* <div><ProfileCrud /></div> */}
+        
+      {/* </div> */}
+{/*       
       <footer>
         <Footer />
-      </footer>
+      </footer> */}
     </>
   );
 };
