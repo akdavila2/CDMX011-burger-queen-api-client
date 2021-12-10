@@ -6,7 +6,12 @@ import PrivateRoute from "../components/PrivateRoute";
 import NotFound from "../components/NotFound/NotFound";
 import { KitchenRoom } from "../components/KitchenRoom/KitchenRoom";
 import { ReadyOrders } from "../components/WaiterProfile/Orders/ReadyOrders";
+
+import { AdminProfile } from "../components/Administrator/AdminProfile";
+
+
 import { UserRegister } from "../components/Administrator/UserRegister";
+
 import { ManageProducts } from "../components/Administrator/ManageProducts";
 
 const App = () => {
@@ -15,7 +20,11 @@ const App = () => {
       <Router>
         <Routes>
           <Route exact path="/ManageProducts" element={<ManageProducts />} />
+
+          <Route exact path="/AdminProfile" element={<AdminProfile />} />
+
           <Route exact path="/UserRegister" element={<UserRegister />} />
+
           <Route
             exact
             path="/ReadyOrders"
