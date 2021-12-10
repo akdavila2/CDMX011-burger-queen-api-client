@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { onAuthStateChanged } from "firebase/auth";
+import Reacts from "react";
+//import { onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router";
 import { auth, firestore } from "../../lib/firebase";
 import { doc, getDoc } from "firebase/firestore";
@@ -21,15 +21,15 @@ const Login = () => {
     return infoFinish;
   };
 
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (!user) {
-        navigate("/");
-        console.log("no user logged in");
-      }
-    });
-    // eslint-disable-next-line
-  }, []);
+  // useEffect(() => {
+  //   onAuthStateChanged(auth, (user) => {
+  //     if (!user) {
+  //       navigate("/");
+  //       console.log("no user logged in");
+  //     }
+  //   });
+  //   // eslint-disable-next-line
+  // }, []);
 
   const handleSubmit = async (email, password) => {
     try {
