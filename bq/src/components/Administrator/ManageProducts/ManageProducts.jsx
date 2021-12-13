@@ -96,6 +96,7 @@ export const ManageProducts = () => {
   };
 
   return (
+    <>
     <div className="content-manager-Products">
       <header>
         <NavBarAdministrator />
@@ -119,10 +120,11 @@ export const ManageProducts = () => {
         )}
       </section>{" "}
       </div>
-     
+      </div>
       <footer>
         <Footer />
       </footer>
-    </div>
+   
+    </>
   );
 };

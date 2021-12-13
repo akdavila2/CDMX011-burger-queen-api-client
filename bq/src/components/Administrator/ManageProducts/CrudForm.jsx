@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import iconAdd from "../../../assets/iconsAdd.png";
-import iconReset from "../../../assets/reset.png";
+import iconAdd from "../../../assets/icons8-añadir-24 1.png";
+import iconReset from "../../../assets/reset 1.png";
 const initialForm = {
   name: "",
   price: "",
@@ -56,7 +56,7 @@ export const CrudForm = ({
   return (
     <div className="form-products">
       <form onSubmit={handleSubmit}>
-    
+    <div className="section-imputs">
         <input
           type="text"
           name="name"
@@ -81,8 +81,7 @@ export const CrudForm = ({
           value={form.image}
           className="input-form"
         />
-       
-     
+             <div className="section-icons">
           <img
             src={iconAdd}
             alt="iconAdd"
@@ -95,7 +94,9 @@ export const CrudForm = ({
             className="icon-products"
             onClick={handleReset}
           />
-       
+       </div>
+       </div>
+
       </form>
     </div>
   );

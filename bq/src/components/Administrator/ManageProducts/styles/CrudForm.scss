@@ -2,31 +2,37 @@
 .form-products{
     display: flex;
     justify-content: center;
-    gap: 15px;
+    align-items: center;
 
 }
-.section-input{
-   width: 10%;
-}
+
 .input-form{
-    background-color: rgba(216, 206, 206, 0.2);
+    background-color: rgba(216, 206, 206, 0.4);
     border-radius: 10px;
     border: none;
     font-size: 18px;
     color: $primary;
     outline: none;
     text-align: center;
-   
-    width: 20vw;
-    height: fit-content;
+   margin: 10px;
+    width: 25vw;
+    height: 5vh;
     ::placeholder {
       color: $text-on-secondary;
       font-weight: bold;
     }
   }
   .icon-products{
-      width: 25px;
-      height: 25px;
+      width: 30px;
+      height: 30px;
       cursor: pointer;
+      margin-left: 5px;
   }
 
+.section-icons{
+display: flex;
+align-items: center;
+}
+.section-imputs{ 
+display: flex;
+}

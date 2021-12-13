@@ -11,19 +11,19 @@ export const CrudTableProducts = ({ product, setDataToEdit, deleteData }) => {
         </picture>
         <section className="title-food-product">
         <p>{product.name}</p>
-        <p>${product.price}.00</p>
+        <p className="price-products">${product.price}.00</p>
         </section>
         <section className="actions-image">
         <img
           src={iconDelete}
           alt="iconAdd"
-          className="icon"
+          className="icon-list-products"
           onClick={() => deleteData(product.id)}
         />
         <img
           src={iconEdit}
           alt="iconAdd"
-          className="icon"
+          className="icon-list-products"
           onClick={() => setDataToEdit(product)}
         />
       </section>
