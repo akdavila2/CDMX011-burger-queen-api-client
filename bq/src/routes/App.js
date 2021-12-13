@@ -11,8 +11,7 @@ import { AdminProfile } from "../components/Administrator/AdminProfile";
 
 
 import { UserRegister } from "../components/Administrator/UserRegister";
-
-import { ManageProducts } from "../components/Administrator/ManageProducts";
+import { ManageProducts } from "../components/Administrator/ManageProducts/ManageProducts";
 
 const App = () => {
   return (

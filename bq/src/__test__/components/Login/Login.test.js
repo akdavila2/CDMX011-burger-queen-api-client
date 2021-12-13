@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import { render, screen,cleanup } from '@testing-library/react';
 import Login from '../../../components/Login/Login';
 
@@ -11,7 +12,7 @@ jest.mock('react-router-dom', () => ({
    useNavigate: () => mockHandleSubmit,
  }));
 
-beforeEach(()=>render(<Login />));
+beforeEach(()=>render(<Router><React.Fragment><Login /></React.Fragment></Router>));
 
 test('should render Login', async () => {
 

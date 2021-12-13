@@ -1,9 +1,5 @@
 import React from "react";
-
-
 export const ProfileCrud = () => {
-
-  
  
   return (
     <>
@@ -15,14 +11,14 @@ export const ProfileCrud = () => {
               <div className="input__form">
                 {/* <img className="icon" src={iconEmail} alt="iconEmail" /> */}
                 <label>correo@burgerqeen.com</label> 
-                <button>Delate</button>
-                <button>update</button>
+                <button>Delete</button>
+                <button>Update</button>
               </div>
               <div className="input__form">
                 {/* <img className="icon" src={iconEmail} alt="iconEmail" /> */}
                 <label>correo@burgerqeen.com</label> 
-                <button>Delate</button>
-                <button>update</button>
+                <button>Delete</button>
+                <button>Update</button>
               </div>
             </form>
           {/* </div> */}
