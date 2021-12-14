@@ -4,9 +4,9 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   signInWithEmailAndPassword,
-  signOut,
+  signOut
 } from "firebase/auth";
-import { getFirestore, doc, setDoc } from "firebase/firestore";
+import { getFirestore, doc, setDoc, getDocs, collection, updateDoc, query, where} from "firebase/firestore";
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_APIKEY,
   authDomain: process.env.REACT_APP_AUTHDOMAIN,
@@ -20,6 +20,9 @@ const firebaseConfig = {
 export const firebaseApp = initializeApp(firebaseConfig);
 export const auth = getAuth(firebaseApp);
 export const firestore = getFirestore(firebaseApp);
+
+
+
 
 export const login = (email, password) => {
   return signInWithEmailAndPassword(auth, email, password);
@@ -37,5 +40,22 @@ export const register = async (email, password, rol) => {
 
   console.log(infoUser.user.uid);
   const docRef = doc(firestore, `users/${infoUser.user.uid}`);
-  setDoc(docRef, { email: email, rol: rol });
+  setDoc(docRef, {email: email, rol: rol , active:true, uid:infoUser.user.uid});
 };
+
+export const getUsers = async ( )=>{
+const userQuery = query(collection(firestore, "users"), where("active", "==", true));
+const querySnapshot = await getDocs(userQuery);
+return querySnapshot
+// const users=collection(firestore, 'users');
+// const usersQuery = await getDocs(users)
+// return usersQuery;  
+}
+
+
+export const removeUser = async (userUid) =>{
+  const userRef = doc(firestore, "users", userUid);
+  await updateDoc(userRef, {
+    active: false
+  });
+}
