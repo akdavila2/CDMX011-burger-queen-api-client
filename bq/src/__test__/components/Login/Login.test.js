@@ -1,6 +1,6 @@
 import React from "react";
-import { render, screen, fireEvent, cleanup } from '@testing-library/react';
-import Login from "../../components/Login/Login";
+import { render, screen,cleanup } from '@testing-library/react';
+import Login from '../../../components/Login/Login';
 
 
 afterEach(cleanup);
@@ -14,7 +14,7 @@ jest.mock('react-router-dom', () => ({
 
 beforeEach(()=>render(<Login />));
 
-test('test should render Login ', async () => {
+test('should render Login', async () => {
 
     const contentEmail = screen.getByPlaceholderText("Write your Email")
     const contentPassword = screen.getByPlaceholderText("Write your Password")

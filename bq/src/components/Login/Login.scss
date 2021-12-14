@@ -25,6 +25,7 @@
     align-items: center;
     width: 100%;
     gap: 20px;
+    position: relative;
   }
 
   .logo {
@@ -35,11 +36,11 @@
     margin-top: 3vh;
     padding: 0px;
   }
-  #img-logo{
-    width: 65vw;
-    height: 25vh;
-    margin-right: -8vw;
-  }
+  // #img-logo {
+  //   // width: 65vw;
+  //   // height: 25vh;
+  //   // margin-right: -8vw;
+  // }
   .img__hamburger {
     width: 40vw;
     min-height: 40vh;
@@ -96,7 +97,7 @@
       color: $text-on-primary;
       width: 80%;
       text-indent: 4.5vh;
-
+      font-size: 3vh;
       &:focus {
         border-bottom-color: $secondary;
       }
@@ -111,22 +112,21 @@
       height: 50px;
     }
     .icon {
-      position: fixed;
-      margin-left: -15vw;
+      position: absolute;
+      // margin-left: -15vw;
       width: 30px;
       height: 30px;
+      margin-left: -31vw;
     }
 
     @-moz-document url-prefix() {
-      .icon {
-        margin-left: -31vw;
-      }
-      input{
+      // .icon {
+      //   margin-left: -31vw;
+      // }
+      input {
         text-indent: 3.5vh;
       }
-
     }
-
   }
 
   @media all and (orientation: portrait) {
@@ -137,8 +137,6 @@
       margin-left: 24vw;
       height: 20vh;
     }
-   
-
 
     .img__hamburger {
       position: fixed;
@@ -159,23 +157,30 @@
     }
 
     .login__form {
-    form {
-    //  background-color:$secondary-dark;
-    background-color:$login-background;
-     border-radius: 10px;
-     padding: 4vh 0px;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    }
-    .icon  {
-      display: flex;
-      margin-left: -27vw;
-    }
-    @-moz-document url-prefix() {
-      .icon {
-        margin-left: -53vw;
+      form {
+        //  background-color:$secondary-dark;
+        //background-color: $login-background;
+        border-radius: 10px;
+        padding: 4vh 0px;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
       }
-
+      .icon {
+        display: flex;
+        margin-left: -27vw;
+        margin-right: 30vw;
+      }
+      @-moz-document url-prefix() {
+        .icon {
+          margin-left: -25vw;
+        }
+      }
     }
   }
 }
+select{
+  background-color: transparent;
+  color: $primary;
+  width: 31vw;
+  height: 50px;
+  border-color: 2px solid $line-input;
 }
