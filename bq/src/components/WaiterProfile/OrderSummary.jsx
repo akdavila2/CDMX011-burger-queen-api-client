@@ -14,9 +14,9 @@ const OrderSummary = (props) => {
       className="content__order__summary"
       onSubmit={(e) => {
         e.preventDefault();
+        createOrder(props, totalPrice, name); //*
         e.target.reset();
         cleanOrder();
-        createOrder(props, totalPrice, name);
       }}
     >
       <section className="name__user">
