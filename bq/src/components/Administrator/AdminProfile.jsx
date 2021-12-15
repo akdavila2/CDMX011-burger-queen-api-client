@@ -6,22 +6,21 @@ import { UserRegister } from "./UserRegister";
 
 export const AdminProfile = () => {
   return (
-    <> 
-    <div className="container-register">
-     <header>
-     <NavBarAdministrator />
-     </header>
-     {/* <div className="user-crud"> */}
-         
-            <section className="user-crud" >
-            <div><UserRegister/>  </div> 
-            <div><ProfileCrud /></div>
-            </section>
-        {/* </div> */}
-      <footer>
-        <div><Footer /></div>
-      </footer>
+    <div>
+    <div className="content__admin__profile">
+      <NavBarAdministrator />
+      <div className="container__crud">
+        <section className="column__container__register">
+        <UserRegister/>
+        </section>
+        <section className="column__container__crud">
+        <ProfileCrud />
+        </section>
       </div>
-    </>
+    </div>
+    <footer>
+      <Footer />
+    </footer>
+  </div>
   );
 };
