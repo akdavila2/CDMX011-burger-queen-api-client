@@ -1,26 +1,27 @@
-import React,{useEffect} from "react";
+import React, {useEffect}  from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router";
 import { auth, firestore } from "../../lib/firebase";
 import { doc, getDoc } from "firebase/firestore";
+//import { doc, getDoc } from "firebase/firestore";
 import SweetAlert from "sweetalert2";
 import LoginForm from "./LoginForm";
 import { login } from "../../lib/firebase";
 import Footer from "../Footer/Footer";
 import logo from "../../assets/banner.png";
 import hamburger from "../../assets/hamburgertwo.png";
+
 const Login = () => {
   const navigate = useNavigate();
 
   // const [userRol, setUserRol] = useState(null);
 
-  const getRol = async (uid) => {
+ const getRol = async (uid) => {
     const docRef = doc(firestore, `users/${uid}`);
     const docCipher = await getDoc(docRef);
     const infoFinish = docCipher.data().rol;
     return infoFinish;
   };
-
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (!user) {
@@ -30,23 +31,26 @@ const Login = () => {
     });
     // eslint-disable-next-line
   }, []);
-
   const handleSubmit = async (email, password) => {
     try {
       console.log("clicking");
       const signIn = await login(email, password);
 
-      const user= auth.currentUser;
-      if(user){console.log(user)}
-     getRol(user.uid).then((userRol)=>{
-      userRol === "chef"
-      ? navigate("/KitchenRoom")
-      : userRol === "waiter"
-      ? navigate("/WaiterProfile")
-      : userRol === "admin" ? navigate("/AdminProfile") : navigate("/") ;
-    console.log("im signIn", signIn);
-      
-  })
+      const user = auth.currentUser;
+      if (!user) {
+        console.log(user);
+        navigate("/");
+      }
+      getRol(user.uid).then((userRol) => {
+        userRol === "chef"
+          ? navigate("/KitchenRoom")
+          : userRol === "waiter"
+          ? navigate("/WaiterProfile")
+          : userRol === "admin"
+          ? navigate("/AdminProfile")
+          : navigate("/");
+        console.log("im signIn", signIn);
+      });
       // const user = await fetch(`/users/${email}`).then(resp => resp.json())
       // localStorage.setItem('user', user)
     } catch (error) {
