@@ -1,58 +1,58 @@
-import React from "react";
-import SweetAlert from "sweetalert2";
+import React, {useState, useEffect} from "react";
+import Sweet from "sweetalert2";
 import { register } from "../../lib/firebase";
 import iconEmail from "../../assets/email.png";
 import iconPassword from "../../assets/password.png";
 
-export const UserRegister = () => {
+export const UserRegister = ({dataToEdit}) => {
 
-  
+
   const submitHandler = async (e) => {
     e.preventDefault();
     const emailUser = e.target.elements.emailUser.value;
     const passwordUser = e.target.elements.passwordUser.value;
     const rolUser = e.target.elements.rolUser.value;
-    try {
-      await register(emailUser, passwordUser, rolUser);
-      new SweetAlert({
-        title: "Registered user",
-        showConfirmButton: true,
-        confirmButtonColor: "#FF4848",
-        background: "#FAEEE0",
-      });
-      e.target.reset();
-    } catch (error) {
-      console.error(error);
-      new SweetAlert({
-        title: "Error",
-        text: error.message,
-        icon: "error",
-        showConfirmButton: false,
-        showCancelButton: true,
-        cancelButtonText: "Ok",
-        cancelButtonColor: "#FF4848",
-        background: "#FAEEE0",
-      });
-    }
+
+      try {
+        await register(emailUser, passwordUser, rolUser);
+        new Sweet({
+          title: "Registered user",
+          showConfirmButton: true,
+          showCancelButton: false,
+          confirmButtonColor: "#FF4848",
+          background: "#FAEEE0",
+        });
+        e.target.reset();
+      } catch (error) {
+        console.error(error);
+        new Sweet({
+          title: "Error",
+          text: error.message,
+          icon: "error",
+          showConfirmButton: false,
+          showCancelButton: true,
+          cancelButtonText: "Ok",
+          cancelButtonColor: "#FF4848",
+          background: "#FAEEE0",
+        });
+      }
+   
   };
 
   return (
     <>
-      {/* <div className="container-register"> */}
-        {/* <NavBarAdministrator /> */}
-        <section className="register-form">
-          {/* <div> */}
-            <form onSubmit={submitHandler}>
-              <div className="input__form">
+            <form  className="register-form" onSubmit={submitHandler}>
+              <div className="input-form">
                 <img className="icon" src={iconEmail} alt="iconEmail" />
                 <input
                   type="emailUser"
                   id="emailUser"
-                  placeholder="write email"
+                  placeholder="User email"
                   required
                 />
               </div>
-              <div className="input__form">
+
+              <div className="input-form">
                 <img className="icon" src={iconPassword} alt="iconPassword" />
                 <input
                   type="passwordUser"
@@ -61,7 +61,8 @@ export const UserRegister = () => {
                   required
                 />
               </div>
-              <select id="rolUser" required>
+
+              <select id="rolUser" class="input-form" placeHolder="Chose a profile" required>
                 <option value="0">Rol</option>
                 <option value="admin">Administrator</option>
                 <option value="chef">Chef</option>
@@ -69,16 +70,6 @@ export const UserRegister = () => {
               </select>
               <button className="register-button">Register </button>
             </form>
-          {/* </div> */}
-          
-        </section>
-        {/* <div><ProfileCrud /></div> */}
-        
-      {/* </div> */}
-{/*       
-      <footer>
-        <Footer />
-      </footer> */}
     </>
   );
 };
