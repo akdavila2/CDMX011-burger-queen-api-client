@@ -5,9 +5,9 @@
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
 * [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
-* [4. Consideraciones](#4-consideraciones)
-* [5. Criterios de aceptación del proyecto](#5-criterios-de-aceptación-del-proyecto)
-* [6. Pistas / tips](#6-pistas--tips)
+* [4. Criterios de aceptación del proyecto](#4-criterios-de-aceptación-del-proyecto)
+* [5. Prototipos de alta fidelidad](#5-prototipos-de-alta-fidelidad)
+* [6. Link a Figma y página desplegada](#6-link-a-figma-y-pagina-desplegada)
 
 ***
 
@@ -156,7 +156,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [x] **Planear y ejecutar tests de usabilidad**
 
-## 5. Criterios de aceptación del proyecto
+## 4. Criterios de aceptación del proyecto
 
 ### Definición del producto
 
@@ -297,21 +297,22 @@ para mantener actualizado el menú.
 * Desplegaste tu aplicación y has etiquetado tu versión (git tag).
 
 ***
-
-### Prototipos de Alta Fidelidad
+## 5. Prototipos de Alta Fidelidad
 
 ![Screenshot from 2021-12-16 17-25-41](https://user-images.githubusercontent.com/7150868/146464281-afda8768-7ddc-4d09-9530-6ada4cc5a413.png)
 ![Screenshot from 2021-12-16 17-27-01](https://user-images.githubusercontent.com/7150868/146464282-661a286c-866a-45df-acc8-bb2ed45c4a91.png)
 ![Screenshot from 2021-12-16 17-27-56](https://user-images.githubusercontent.com/7150868/146464284-addc10bb-f9d1-44e5-89ff-6550511c7651.png)
 ![Screenshot from 2021-12-16 17-29-04](https://user-images.githubusercontent.com/7150868/146464022-0e6dcdc7-9c3c-4ddc-80a1-6bbd0707a08a.png)
 
-### Link a Figma y página desplegada
+***
+## 6. Link a Figma y página desplegada
 
-:earth_asia: Página desplegada :point_right: https://ac-burger-queen.web.app/
-Usuarios de pruebas:
-:bowtie: waiter@burgerqueen.com :key: 123456.
-:man_with_turban: chef@burgerqueen.com  :key: 123456.
-:sunglasses: admin@burgerqueen.com  :key: 123456.
+:earth_asia: Página desplegada :point_right: https://ac-burger-queen.web.app/ <br>
+Usuarios de pruebas:<br>
+:bowtie: waiter@burgerqueen.com :key: 123456.<br>
+:man_with_turban: chef@burgerqueen.com  :key: 123456.<br>
+:sunglasses: admin@burgerqueen.com  :key: 123456.<br>
 
-art :art: Link a Figma :point_right: https://www.figma.com/file/9PIyIBI3BoowSx0DWnWLz4/BQ-API?node-id=0%3A1
+:art: Link a Figma :point_right: https://www.figma.com/file/9PIyIBI3BoowSx0DWnWLz4/BQ-API?node-id=0%3A1
+
 
