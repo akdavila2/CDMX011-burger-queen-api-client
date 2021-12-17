@@ -1,24 +1,25 @@
-
 .content__admin__profile{
-    min-height: 90vh;
+    min-height: 85vh;
     max-width: 100vw;
 }
 .container__crud{
-    margin: 7px;    
+    margin: 7px 4.5vw;
     display: flex;
-    gap: 20px;
-    min-height: 75vh;
+    flex-direction: column;
+    min-height: 72vh;
 }
 .column__container__register{
-    width: 40%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-left: 5vw;
 }
 .column__container__crud{
-    width: 50%;
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
+    margin-top: 20px;
+    justify-content: space-between;
 }

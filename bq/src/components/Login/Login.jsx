@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import React from "react";
+=======
+import React, {useEffect} from "react";
+import { onAuthStateChanged } from "firebase/auth";
+>>>>>>> 0c154b76774461a8b33537e6768965c89ffb95b6
 import { useNavigate } from "react-router";
 import { auth, firestore } from "../../lib/firebase";
 import { doc, getDoc } from "firebase/firestore";
@@ -12,15 +17,12 @@ import hamburger from "../../assets/hamburgertwo.png";
 const Login = () => {
   const navigate = useNavigate();
 
-  // const [userRol, setUserRol] = useState(null);
-
   const getRol = async (uid) => {
     const docRef = doc(firestore, `users/${uid}`);
     const docCipher = await getDoc(docRef);
     const infoFinish = docCipher.data().rol;
     return infoFinish;
   };
-
   const handleSubmit = async (email, password) => {
     try {
       console.log("clicking");

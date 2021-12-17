@@ -10,7 +10,8 @@ export const AdminProfile = () => {
     <div className="content__admin__profile">
       <NavBarAdministrator />
       <div className="container__crud">
-        <section className="column__container__register">
+        <section >
+        {/* className="column__container__register" */}
         <UserRegister/>
         </section>
         <section className="column__container__crud">

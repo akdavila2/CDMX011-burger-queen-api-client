@@ -5,7 +5,9 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   signInWithEmailAndPassword,
-  signOut
+  signOut,
+  // setPersistence,
+  // browserSessionPersistence
 } from "firebase/auth";
 import { getFirestore, doc, setDoc, getDocs, collection, updateDoc, query, where} from "firebase/firestore";
 const firebaseConfig = {
@@ -25,9 +27,11 @@ export const firestore = getFirestore(firebaseApp);
 
 
 
-export const login = (email, password) => {
+export const login = async (email, password) => {
+  //  await setPersistence(auth, browserSessionPersistence)
   return signInWithEmailAndPassword(auth, email, password);
 };
+
 export const logout = () => signOut(auth);
 
 export const register = async (email, password, rol) => {
@@ -47,10 +51,7 @@ export const register = async (email, password, rol) => {
 export const getUsers = async ( )=>{
 const userQuery = query(collection(firestore, "users"), where("active", "==", true));
 const querySnapshot = await getDocs(userQuery);
-return querySnapshot
-// const users=collection(firestore, 'users');
-// const usersQuery = await getDocs(users)
-// return usersQuery;  
+return querySnapshot 
 }
 
 
@@ -59,4 +60,19 @@ export const removeUser = async (userUid) =>{
   await updateDoc(userRef, {
     active: false
   });
+}
+
+export const updateUser = async (userUid, dataToUpdate) =>{
+ 
+  try{
+    const userRef = doc(firestore, "users", userUid);
+    await updateDoc(userRef, {
+      rol: dataToUpdate
+    });
+  }
+  catch(e){
+    console.log(e);
+
+  }
+  
 }
