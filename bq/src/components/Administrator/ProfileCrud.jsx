@@ -71,13 +71,13 @@ showUser()
                   </div>
                   <div className="btn-actions">
                   <img 
-                  className="icon-delete"
+                  className="icon"
                   src={iconDelete}
                   alt="iconDelete"
                   onClick={() => onRemove(anUser.data().uid)} />
                   
                   <img 
-                  className="icon-update"
+                  className="icon"
                   src={iconUpdate}
                   alt="iconUpdate"
                  onClick={() =>update(anUser.data()) }//setdatatoedit
