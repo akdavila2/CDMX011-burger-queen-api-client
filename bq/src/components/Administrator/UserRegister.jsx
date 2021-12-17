@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import Sweet from "sweetalert2";
 import { register } from "../../lib/firebase";
 import iconEmail from "../../assets/email.png";
@@ -62,7 +62,7 @@ export const UserRegister = ({dataToEdit}) => {
                 />
               </div>
 
-              <select id="rolUser" class="input-form" placeHolder="Chose a profile" required>
+              <select id="rolUser" className="input-form" placeholder="Chose a profile" required>
                 <option value="0">Rol</option>
                 <option value="admin">Administrator</option>
                 <option value="chef">Chef</option>

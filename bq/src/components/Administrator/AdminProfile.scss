@@ -23,3 +23,15 @@
     margin-top: 20px;
     justify-content: space-between;
 }
+
+@media only screen and (orientation: portrait) {
+
+    .container__crud{
+    
+    min-height: 79vh;
+    }
+
+    .column__container__crud{
+      justify-content: center;
+    }
+}
