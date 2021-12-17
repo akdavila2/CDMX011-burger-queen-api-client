@@ -12,8 +12,6 @@ import hamburger from "../../assets/hamburgertwo.png";
 const Login = () => {
   const navigate = useNavigate();
 
-  // const [userRol, setUserRol] = useState(null);
-
   const getRol = async (uid) => {
     const docRef = doc(firestore, `users/${uid}`);
     const docCipher = await getDoc(docRef);
@@ -26,6 +24,15 @@ const Login = () => {
       if (!user) {
         navigate("/");
         console.log("no user logged in");
+      }else{
+        getRol(user.uid).then((userRol)=>{
+          userRol === "chef"
+          ? navigate("/KitchenRoom")
+          : userRol === "waiter"
+          ? navigate("/WaiterProfile")
+          : userRol === "admin" ? navigate("/AdminProfile") : navigate("/") ;
+        
+      })
       }
     });
     // eslint-disable-next-line
