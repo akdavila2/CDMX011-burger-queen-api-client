@@ -7,7 +7,7 @@ import Footer from "../Footer/Footer";
 import PreLoad from "../PreLoad/PreLoad";
 import { NotFound } from "http-errors";
 import { OrderIteration } from "./OrderIteration";
-import { auth } from "../../lib/firebase";
+//import { auth } from "../../lib/firebase";
 
 export const KitchenRoom = () => {
   const [db, setDb] = useState(null);

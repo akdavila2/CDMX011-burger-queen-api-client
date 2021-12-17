@@ -6,6 +6,7 @@ const initialForm = {
   price: "",
   image: "",
   id: null,
+  type: "",
 };
 
 export const CrudForm = ({
@@ -34,7 +35,7 @@ export const CrudForm = ({
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!form.name || !form.price || !form.image) {
+    if (!form.name || !form.price || !form.image || !form.type) {
       alert("incomplete data");
       return;
     }
@@ -71,6 +72,14 @@ export const CrudForm = ({
           placeholder="Price"
           onChange={handleChange}
           value={form.price}
+          className="input-form"
+        />
+         <input
+          type="text"
+          name="type"
+          placeholder="Breakfast or Lunch"
+          onChange={handleChange}
+          value={form.type}
           className="input-form"
         />
         <input
