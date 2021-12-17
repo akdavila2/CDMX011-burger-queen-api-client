@@ -1,10 +1,11 @@
 @import "../../styles/variables";
 
 .content__preload{
-min-height: 95vh;  
-display: flex;
-justify-content: center;
-align-items: center;
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -70px;
 
 
   .spinner {

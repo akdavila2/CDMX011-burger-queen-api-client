@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import iconLogout from "../../assets/salir.png";
 import { useNavigate } from "react-router-dom";
-import logo from "../../assets/banner.png";
 import { auth, logout } from "../../lib/firebase";
+import iconLogout from "../../assets/salir.png";
+import logo from "../../assets/banner.png";
+
 
 const NavBar = () => {
   const [error, setError] = useState("");
@@ -21,8 +22,7 @@ const NavBar = () => {
     <div>
       <div className="navBar">
         <img src={logo} alt="logonav" className="logoNav" />
-      </div>
-      <div className="logout">
+        <div className="logout">
         <div className="textlogout">
           <img
             src={iconLogout}
@@ -34,6 +34,8 @@ const NavBar = () => {
           {error && <div className="error">{error}</div>}
         </div>
       </div>
+      </div>
+
     </div>
   );
 };

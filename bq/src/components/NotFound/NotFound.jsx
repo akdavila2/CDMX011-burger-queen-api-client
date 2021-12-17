@@ -1,16 +1,18 @@
 import React from "react";
+//import Footer from "../Footer/Footer";
 import img from "../../assets/notfound.png";
-import Footer from "../Footer/Footer";
-const NotFound = () => {
+
+ const NotFound = () => {
   return (
     <>
       <div className="container__notfound">
         <img src={img} alt="error" />
       </div>
-      <footer>
+      {/* <footer>
         <Footer />
-      </footer>
+      </footer> */}
     </>
   );
 };
 export default NotFound;
+

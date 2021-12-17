@@ -1,0 +1,16 @@
+.content__waiter__profile{
+    min-height: 93vh;
+    max-width: 100vw;
+}
+.container__menu{
+    margin: 7px;    
+    display: flex;
+    gap: 20px;
+    min-height: 75vh;
+}
+.column__container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
