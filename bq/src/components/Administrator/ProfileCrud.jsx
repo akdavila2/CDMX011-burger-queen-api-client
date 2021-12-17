@@ -2,22 +2,28 @@ import React ,{useEffect, useState} from "react";
 import {getUsers} from "../../lib/firebase";
 import {updateUser} from "../../lib/firebase";
 import SweetAlert from "sweetalert2";
+import PreLoad from "../PreLoad/PreLoad";
 import iconDelete from "../../assets/deleteUser.png"
 import iconUpdate from "../../assets/updateUser.png"
 import { removeUser } from "../../lib/firebase";
 import iconEmail from "../../assets/iconEmail.png"
 import iconRol from "../../assets/userRol.png"
 export const ProfileCrud = () => {
-  
+  const [loading, setLoading] = useState(false);
+
   const [users, setUsers]=useState(null);
 
   useEffect( ()=>{
+    
+    setLoading(true);
 showUser()
-  }, [setUsers])
+
+}, [setUsers]);
 
   const showUser= async ()=>{
     const toUsers= await getUsers();
     setUsers(toUsers.docs)
+    setLoading(false);
   }
 //creo que falta manejo de pros
   const onRemove = (item)=>{
@@ -58,14 +64,14 @@ showUser()
 
   return (
     <>
-    {/* <div > */}
+    {loading && <PreLoad />}
                 { 
                   users && users.map((anUser, i)=> 
-                  <section className="register-form-crud">
+                  <section  key={i} className="register-form-crud">
                   
-                  <div key={i} className="user-container">
+                  <div  className="user-container">
 
-                    <div className="labels-coumn">
+                    <div  className="labels-coumn">
                   <label ><img className="icon-user" src={iconEmail} alt="iconEmail" />{anUser.data().email}</label>
                   <label><img className="icon-user" src={iconRol} alt="iconRol" />{anUser.data().rol}</label> 
                   </div>
