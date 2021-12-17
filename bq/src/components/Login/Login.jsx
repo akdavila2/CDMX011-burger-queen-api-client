@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import React from "react";
-=======
 import React, {useEffect} from "react";
 import { onAuthStateChanged } from "firebase/auth";
->>>>>>> 0c154b76774461a8b33537e6768965c89ffb95b6
 import { useNavigate } from "react-router";
 import { auth, firestore } from "../../lib/firebase";
 import { doc, getDoc } from "firebase/firestore";
@@ -13,7 +9,6 @@ import { login } from "../../lib/firebase";
 import Footer from "../Footer/Footer";
 import logo from "../../assets/banner.png";
 import hamburger from "../../assets/hamburgertwo.png";
-
 const Login = () => {
   const navigate = useNavigate();
 
@@ -23,26 +18,44 @@ const Login = () => {
     const infoFinish = docCipher.data().rol;
     return infoFinish;
   };
+  
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        navigate("/");
+        console.log("no user logged in");
+      }else{
+        getRol(user.uid).then((userRol)=>{
+          userRol === "chef"
+          ? navigate("/KitchenRoom")
+          : userRol === "waiter"
+          ? navigate("/WaiterProfile")
+          : userRol === "admin" ? navigate("/AdminProfile") : navigate("/") ;
+        
+      })
+      }
+    });
+    // eslint-disable-next-line
+  }, []);
+  
   const handleSubmit = async (email, password) => {
     try {
       console.log("clicking");
       const signIn = await login(email, password);
 
-      const user = auth.currentUser;
-      if (user) {
-        getRol(user.uid).then((userRol) => {
-          userRol === "chef"
-            ? navigate("/KitchenRoom")
-            : userRol === "waiter"
-            ? navigate("/WaiterProfile")
-            : userRol === "admin"
-            ? navigate("/AdminProfile")
-            : navigate("/");
-          console.log("im signIn", signIn);
-        });
-        // const user = await fetch(`/users/${email}`).then(resp => resp.json())
-        // localStorage.setItem('user', user)
-      }
+      const user= auth.currentUser;
+      if(user){console.log(user)}
+     getRol(user.uid).then((userRol)=>{
+      userRol === "chef"
+      ? navigate("/KitchenRoom")
+      : userRol === "waiter"
+      ? navigate("/WaiterProfile")
+      : userRol === "admin" ? navigate("/AdminProfile") : navigate("/") ;
+    console.log("im signIn", signIn);
+      
+  })
+      // const user = await fetch(`/users/${email}`).then(resp => resp.json())
+      // localStorage.setItem('user', user)
     } catch (error) {
       console.error(error);
       new SweetAlert({
