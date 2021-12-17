@@ -43,7 +43,7 @@ width: 48vw;
     align-items: center;
     width: 43vw;
     height: 15vh;
-    background-color: #e7dfd621;
+    background-color: #e7dfd617;
     border-radius: 10px;
   }
   .icon-user {
@@ -59,7 +59,15 @@ width: 48vw;
   margin:0px 5px;
 }
 
-@media screen and (orientation:portrait) {
-
+@media only screen and (max-width: 900px) {
+  
+  .user-container{
+    width: 100%;
+    height: 10vh;
+  }
+  .labels-coumn{
+  height: 10vh;
+  width: 50vw;
+  }
 }
   }
