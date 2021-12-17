@@ -1,6 +1,7 @@
 {
     "cSpell.words": [
         "Agua",
+        "añadir",
         "APIKEY",
         "Aros",
         "AUTHDOMAIN",
@@ -23,11 +24,13 @@
         "MESSAGINGSENDERID",
         "notfound",
         "preload",
+        "productadmin",
         "PROJECTID",
         "puede",
         "queso",
         "rcibir",
         "salir",
-        "STORAGEBUCKET"
+        "STORAGEBUCKET",
+        "usersicon"
     ]
 }

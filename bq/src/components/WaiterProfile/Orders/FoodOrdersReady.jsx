@@ -1,7 +1,7 @@
 import React from "react";
 import iconUser from "../../../assets/user.png";
 
-export const FoodOrdersReady = ({ order, closeOrder, deleteData }) => {
+export const FoodOrdersReady = ({ order, closeOrder, updateData }) => {
   return (
     <div className="content-order">
       <header>
@@ -15,7 +15,7 @@ export const FoodOrdersReady = ({ order, closeOrder, deleteData }) => {
             key={order.id}
             onClick={(e) => {
               e.preventDefault();
-              deleteData(order);
+              updateData(order);
               closeOrder(order);
             }}
           >

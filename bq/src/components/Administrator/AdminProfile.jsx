@@ -5,8 +5,6 @@ import {ProfileCrud} from '../Administrator/ProfileCrud'
 import { UserRegister } from "./UserRegister";
 
 export const AdminProfile = () => {
-
-    
   return (
     <div>
     <div className="content__admin__profile">

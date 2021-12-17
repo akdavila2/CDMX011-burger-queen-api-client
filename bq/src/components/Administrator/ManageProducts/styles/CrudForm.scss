@@ -1,0 +1,32 @@
+@import "../../../../styles/variables";
+.form-products{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+}
+.section-input{
+   width: 10%;
+}
+.input-form{
+    background-color: rgba(216, 206, 206, 0.2);
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    color: $primary;
+    outline: none;
+    text-align: center;
+   
+    width: 20vw;
+    height: fit-content;
+    ::placeholder {
+      color: $text-on-secondary;
+      font-weight: bold;
+    }
+  }
+  .icon-products{
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+  }
+

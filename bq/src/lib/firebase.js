@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 import { initializeApp } from "firebase/app";
+
 import {
   createUserWithEmailAndPassword,
   getAuth,

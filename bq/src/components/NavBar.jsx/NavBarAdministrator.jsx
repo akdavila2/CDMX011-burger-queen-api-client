@@ -18,7 +18,7 @@ export const NavBarAdministrator = () => {
         }
       };
       const handleManageWorkers = () => {
-        navigate("/UserRegister");
+        navigate("/AdminProfile");
       };
       const handleManageProducts = () => {
         navigate("/ManageProducts");

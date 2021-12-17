@@ -1,4 +1,4 @@
-import React, { useEffect, } from "react";
+import React, {useEffect} from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { useNavigate } from "react-router";
 import { auth, firestore } from "../../lib/firebase";
@@ -42,6 +42,7 @@ const Login = () => {
     try {
       console.log("clicking");
       const signIn = await login(email, password);
+
       const user= auth.currentUser;
       if(user){console.log(user)}
      getRol(user.uid).then((userRol)=>{
@@ -53,8 +54,6 @@ const Login = () => {
     console.log("im signIn", signIn);
       
   })
-      
-
       // const user = await fetch(`/users/${email}`).then(resp => resp.json())
       // localStorage.setItem('user', user)
     } catch (error) {
